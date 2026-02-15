@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YuRu⎻Portfolio</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- 返回按鈕 -->
+        <nav class="back-nav">
+            <button class="back-btn" onclick="history.back()" aria-label="Go back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- 標題區域 -->
+        <header>
+            <h1>LG</h1>
+            <!-- <div class="subtitle">CommandDot</div> -->
+        </header>
+
+        <div class="divider"></div>
+
+        <!-- 內容區域 -->
+        <div class="content-grid">
+            
+            <!-- 左側資訊欄 -->
+            <aside>
+                <div class="sidebar-item">
+                    <span class="section-label">My Role</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">Designer</span>
+                    </div>
+                </div>
+
+                <!-- <div class="sidebar-item">
+                    <span class="section-label">Team</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">Zane Shannon, Founder</span>
+                    </div>
+                </div> -->
+
+                <!-- <div class="sidebar-item">
+                    <span class="section-label">Tools</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">Figma</span>
+                        <span class="sidebar-text">Linear</span>
+                    </div>
+                </div> -->
+
+                <div class="sidebar-item">
+                    <span class="section-label">Timeline</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">2025</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 右側詳細說明 -->
+            <section class="main-column">
+                <div class="sidebar-item">
+                    <span class="section-label">Description</span>
+                    <div class="section-content">
+                        <p>參與 LG 家電產品（除濕機、空氣清淨機）行銷短片創意發想，並負責微型投影機於集資平台之主視覺 banner 設計。
+                            在功能導向產品中建立差異化溝通策略，並提升集資頁面的轉換吸引力。</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">challenge</span>
+                    <div class="section-content">
+                        <p>家電產品功能高度同質化，短片需在短時間內吸引人和傳達賣點，集資平台使用者需呈現價值說明與信任感。</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">Strategy</span>
+                    <div class="section-content">
+                        <p>短片：把理性規格轉成感受價值。</br>集資平台使用者：價值主張清晰度、產品可信度、情境想像力建立。</p>
+                    </div>
+                </div>
+
+                <!-- 按鈕組 -->
+                <!-- <div class="button-group">
+                    <a href="#" class="btn">Read Case Study</a>
+                    <a href="#" class="btn">
+                        Website
+                  
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </div> -->
+            </section>
+        </div>
+    </div>
+
+    <div class="layout-container">
+        
+        <!-- 左邊一欄 -->
+        <div class="card left-column" onclick="openLightbox(this)" style="height: 640px;">
+            <img src="img/lg2.jpg" alt="Chat UI">
+        </div>
+
+        <!-- 右邊欄位容器 -->
+        <div class="right-column">
+            
+            <!-- 右上 -->
+            <div class="card right-top" onclick="openLightbox(this)">
+                <img src="img/index_lg.jpg" alt="Email UI">
+            </div>
+
+            <!-- 右下 -->
+            <div class="card right-bottom">
+                <video width="680" height="340" autoplay muted playsinline loop>
+                    <source src="img/PC1.mp4" type="video/mp4">
+                    您的瀏覽器不支援 HTML5 影片播放。
+                </video>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 燈箱元素 (預設隱藏) -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Full view" onclick="event.stopPropagation()">
+    </div>
+    
+
+    <script src="project.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YuRu⎻Portfolio</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- 返回按鈕 -->
+        <nav class="back-nav">
+            <button class="back-btn" onclick="history.back()" aria-label="Go back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- 標題區域 -->
+        <header>
+            <h1>Kiehl's</h1>
+            <!-- <div class="subtitle">CommandDot</div> -->
+        </header>
+
+        <div class="divider"></div>
+
+        <!-- 內容區域 -->
+        <div class="content-grid">
+            
+            <!-- 左側資訊欄 -->
+            <aside>
+                <div class="sidebar-item">
+                    <span class="section-label">My Role</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">Designer</span>
+                    </div>
+                </div>
+
+                <!-- <div class="sidebar-item">
+                    <span class="section-label">Team</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">Zane Shannon, Founder</span>
+                    </div>
+                </div> -->
+
+                <!-- <div class="sidebar-item">
+                    <span class="section-label">Tools</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">Figma</span>
+                        <span class="sidebar-text">Linear</span>
+                    </div>
+                </div> -->
+
+                <div class="sidebar-item">
+                    <span class="section-label">Timeline</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">2025</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 右側詳細說明 -->
+            <section class="main-column">
+                <div class="sidebar-item">
+                    <span class="section-label">Description</span>
+                    <div class="section-content">
+                        <p>品牌需於不同銷售節點（一般檔期 / 母親節檔期）提升轉換率與活動曝光。需在既有品牌視覺規範下，強化促購訊息與情感連結。</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">Target</span>
+                    <div class="section-content">
+                        <p>提升活動購買率，強化節慶氛圍差異化，在不破壞品牌一致性的前提下，提高轉換動機。</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">Strategy</span>
+                    <div class="section-content">
+                        <p>一般檔期：理性導向視覺語言，CTA 清楚</br>母親節檔期：加強情緒價值，色彩轉節慶調性，強調情感連結與價格</p>
+                    </div>
+                </div>
+
+                <!-- 按鈕組 -->
+                <!-- <div class="button-group">
+                    <a href="#" class="btn">Read Case Study</a>
+                    <a href="#" class="btn">
+                        Website
+                  
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </div> -->
+            </section>
+        </div>
+    </div>
+
+    <div class="layout-container">
+        
+        <!-- 左邊一欄 -->
+        <div class="card left-column" onclick="openLightbox(this)">
+            <img src="img/MD page_0513-0515_MB.jpg" alt="Chat UI">
+        </div>
+
+        <!-- 右邊欄位容器 -->
+        <div class="right-column">
+            
+            <!-- 右上 -->
+            <div class="card right-top" onclick="openLightbox(this)">
+                <img src="img/KIE_PC.jpg" alt="Email UI">
+            </div>
+
+            <!-- 右下 -->
+            <div class="card right-bottom" onclick="openLightbox(this)">
+                <img src="img/KIE_PC2.jpg" alt="Profile UI">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 燈箱元素 (預設隱藏) -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Full view" onclick="event.stopPropagation()">
+    </div>
+    
+
+    <script src="project.js"></script>
+</body>
+</html>

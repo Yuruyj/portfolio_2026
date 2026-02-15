@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YuRu⎻Portfolio</title>
+    <link rel="stylesheet" href="uiux.css">
+</head>
+<body>
+
+    <div class="container" style="max-width: 1440px;">
+        <!-- 返回按鈕 -->
+        <nav class="back-nav">
+            <button class="back-btn" onclick="history.back()" aria-label="Go back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- 標題區域 -->
+        <header>
+            <h1>Ford 官網</h1>
+            <div class="subtitle">模組化 UI 系統建構</div>
+        </header>
+
+        <div class="divider"></div>
+
+        <!-- 內容區域 -->
+        <div class="content-grid">
+            
+            <!-- 左側資訊欄 -->
+            <aside>
+                <div class="sidebar-item">
+                    <span class="section-label">My Role</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">UI Designer</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">Team</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">6+ members</span>
+                    </div>
+                </div>
+
+                <!-- <div class="sidebar-item">
+                    <span class="section-label">Tools</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">Figma</span>
+                        <span class="sidebar-text">Linear</span>
+                    </div>
+                </div> -->
+
+                <div class="sidebar-item">
+                    <span class="section-label">Timeline</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">2024</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 右側詳細說明 -->
+            <section class="main-column">
+                <div class="sidebar-item">
+                    <span class="section-label">背景</span>
+                    <div class="section-content">
+                        <p>參與 Ford 官網改版專案，目標為提升整體視覺一致性，並參考英國 Ford 官網架構進行優化，同時建立可延伸之模組化元件系統。</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">核心目標</span>
+                    <div class="section-content">
+                        <p>視覺與品牌國際站點對齊、提升內容排版清晰度、建立可重複使用之 Component、降低未來新增頁面之設計與開發成本。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">設計挑戰</span>
+                    <div class="section-content">
+                        <p>在既有品牌規範下進行架構重整、將英國官網結構轉譯為本地使用情境、模組需具備彈性組合能力。</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">模組化思考</span>
+                    <div class="section-content">
+                        <p>Component 設計原則：建立統一 Spacing system、定義標題、內文、CTA 層級規範、將內容區塊拆解為可重組模組。<br>
+                        合用性考量：模組需支援不同圖片比例、文案長短彈性、CTA 位置可調整但不破壞閱讀節奏。</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">Benchmark 思維</span>
+                    <div class="section-content">
+                        <p>透過分析英國 Ford 官網之資訊架構與視覺節奏，整理出可複製的區塊結構與內容呈現模式，並轉化為在地化模組設計。</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">成果</span>
+                    <div class="section-content">
+                        <p>建立一致的模組化 UI 框架、提升頁面結構清晰度、為後續車款頁面延伸提供標準化設計基礎。</p>
+                    </div>
+                </div>
+
+                <!-- 按鈕組 -->
+                <div class="button-group">
+                    <!-- <a href="#" class="btn">Read Case Study</a> -->
+                    <a href="https://www.fordlioho.com.tw" style="max-width: 320px;" target="_blank" rel="noopener noreferrer" class="btn">
+                        Website
+                  
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="layout-container" style="max-width: 1440px;margin-bottom: 10rem;grid-template-columns: 1.2fr 1fr 1fr;">
+        
+     
+        <div class="card left-column" onclick="openLightbox(this)">
+            <img src="img/Focus_PC.jpg" alt="Chat UI">
+        </div>
+
+       
+        <div class="right-column">
+            
+      
+            <div class="card right-top" onclick="openLightbox(this)">
+                <img src="img/ford banner.png" alt="Email UI">
+            </div>
+
+            <div class="card right-bottom" onclick="openLightbox(this)">
+                <img src="img/ford 4 card.png" alt="Profile UI">
+            </div>
+
+        </div>
+
+        <div class="far-right-column">
+        
+        <div class="card left-column" onclick="openLightbox(this)">
+            <img src="img/ford cardchange.png" alt="New Column UI">
+        </div>
+
+    </div>
+    </div>
+
+    <!-- 燈箱元素 (預設隱藏) -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Full view" onclick="event.stopPropagation()">
+    </div>
+    
+
+    <script src="project.js"></script>
+</body>
+</html>

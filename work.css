@@ -1,0 +1,489 @@
+/* --- 1. Reset & Base Styles --- */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #18181b;
+    --border-color: rgba(24, 24, 27, 0.1);
+    --primary-black: #000;
+    --primary-white: #fff;
+    --gray-light: #d4d4d8;
+    --gray-medium: #a1a1aa;
+    --gray-dark: #71717a;
+    --container-width: 1440px;
+    --header-height: 80px;
+    --radius: 32px;
+    --card-bg:#f8f8f8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /* line-height: 1.5; */
+    -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+p {
+    color: var(--text-gray-dark);
+    font-size: 19px;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+}
+
+/* --- Navigation --- */
+.navbar {
+    width: 100%;
+    height: var(--header-height);
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    margin: 40px 0 20px 0 ;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+#nav-marker {
+    position: absolute;
+    bottom: 0; /* 貼在底部 */
+    left: 0;
+    height: 3px; /* 線條粗細 */
+    width: 0; /* 初始寬度由 JS 計算 */
+    background-color: var(--border-color);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1); /* 增加一點滑動慣性 */
+    border-radius: 2px;
+    pointer-events: none; /* 防止遮擋點擊 */
+}
+
+.nav-links {
+    display: flex;
+    gap: 38px;
+    position: relative;
+}
+
+.nav-links a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    padding: 10px 0;
+}
+
+.nav-links a.active {
+    opacity: 1;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+.mobile-menu-btn {
+    display: none;
+}
+
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu-overlay.open {
+    transform: translateX(0);
+}
+
+.mobile-link {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.close-menu-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+/* Mobile Menu Button - 預設隱藏 */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.close-menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+
+/* Mobile Overlay Menu */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu-overlay.open {
+    transform: translateX(0);
+}
+
+.mobile-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 1024px) {
+    .contact-heading { font-size: 4rem; }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 20px;
+    }
+    .nav-links { display: none; }
+    .navbar-inner {
+        justify-content: flex-end; /* 手機版讓漢堡選單靠右 */
+    }
+    .mobile-menu-btn { display: block; }
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+    }
+    .copyright { text-align: left; }
+}
+
+/* ////////// */
+
+/* --- 導覽列容器 --- */
+.navbar-bt {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar-inner-bt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- iOS 膠囊毛玻璃選單 (Desktop) --- */
+.nav-links-container-bt {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    /* 膠囊外框的毛玻璃效果 */
+    background: rgba(230, 230, 235, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 999px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* 滑動的高亮背景區塊 */
+.sliding-highlight-bt {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 0; /* 透過 JS 修改 transform 來移動 */
+    background: #ffffff;
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1;
+}
+
+.nav-item-bt {
+    position: relative;
+    z-index: 2; /* 確保文字在滑動區塊之上 */
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #3a3a3a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+/* 預設被選取的文字顏色 */
+.nav-item-bt.active-bt {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.nav-item-bt:hover:not(.active-bt) {
+    color: #555;
+}
+
+/* --- RWD 響應式斷點 --- */
+@media (max-width: 600px) {
+    .navbar-bt {
+        top: 15px;
+    }
+}
+
+/* --- 新增：內容區塊樣式 --- */
+.content-container {
+    max-width: var(--container-width); /* 若無變數則設預設值 */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tab-content {
+    display: none; /* 預設隱藏 */
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+}
+
+.tab-content.active-content {
+    display: block; /* 被選中時顯示 */
+    opacity: 1;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+}
+
+.project-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.projects-grid .project-card:nth-child(2n) {
+    border-right: none;
+}
+
+.card-content {
+    padding: 40px;
+}
+
+.img-container {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background-color: var(--card-bg);
+    margin-bottom: 24px;
+    overflow: hidden;
+    position: relative;
+    border-radius: var(--radius);
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover .img-container img {
+    transform: scale(1.05);
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.project-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 4px;
+}
+
+.project-card:hover .project-name {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+}
+
+.project-meta {
+    font-size: 0.875rem;
+    color: var(--gray-dark);
+}
+
+.icon-circle {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--primary-black);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.project-card:hover .icon-circle {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+}
+
+@media (max-width: 1024px) {
+    .hero-title { font-size: 4rem; }
+    .contact-heading { font-size: 4rem; }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 20px;
+    }
+    .nav-links { display: none; }
+    .navbar-inner {
+        justify-content: flex-end; /* 手機版讓漢堡選單靠右 */
+    }
+    .mobile-menu-btn { display: block; }
+    
+    .hero { padding: 0 20px; }
+    .hero-title { font-size: 3rem; }
+    .hero-desc { font-size: 1.125rem; }
+    
+    .projects-grid { grid-template-columns: 1fr; }
+    .projects-grid .project-card { border-right: none; }
+    
+    .about-grid { grid-template-columns: 1fr; }
+    .about-sidebar { margin-bottom: 20px; }
+    
+    .service-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .contact-heading { font-size: 2.5rem; }
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+    }
+    .copyright { text-align: left; }
+}
+
+/* --- 響應式優化修正 (RWD) --- */
+
+/* 平板尺寸 (992px 以下) */
+@media (max-width: 992px) {
+    .bento-container {
+        grid-template-columns: 1fr 1.2fr;
+        gap: 16px;
+    }
+    .command-card { padding: 20px; }
+}
+
+/* 手機與小型平板尺寸 (850px 以下) */
+@media (max-width: 850px) {
+    body { padding: 20px 15px; }
+    .bento-container {
+        grid-template-columns: 1fr; /* 改為單欄佈局 */
+    }
+    .feed-card, .command-card, .bottom-right-group {
+        order: unset; 
+        grid-row: auto;
+    }
+}
+
+/* 小型手機尺寸 (500px 以下) */
+@media (max-width: 500px) {
+    .bottom-right-group {
+        grid-template-columns: 1fr; /* 右下兩個小卡片在極小螢幕也改為單欄 */
+    }
+    .card { padding: 20px; }
+    .tabs { margin-bottom: 16px; }
+    .release-bar { display: none; } /* 手機版隱藏桌面快捷鍵提示 */
+    .command-action { font-size: 14px; padding: 14px; }
+}
