@@ -12,6 +12,8 @@
     --header-height: 80px;
     --radius: 32px;
     --card-bg:#f8f8f8;
+    --padding:0 24px;
+    --gap:32px;
 }
 
 * {
@@ -62,12 +64,12 @@ p {
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 40px;
+    padding: var(--padding);
 }
 
 /* 左上角返回按鈕 */
 .back-nav {
-    margin-bottom: 40px;
+    margin: 40px 0;
 }
 
 .back-btn {
@@ -417,7 +419,7 @@ h1 {
 
 /* 手機與小型平板尺寸 (850px 以下) */
 @media (max-width: 850px) {
-    body { padding: 20px 15px; }
+    /* body { padding: 20px 15px; } */
     .bento-container {
         grid-template-columns: 1fr; /* 改為單欄佈局 */
     }
