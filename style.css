@@ -12,6 +12,8 @@
     --header-height: 80px;
     --radius: 32px;
     --card-bg:#f8f8f8;
+    --padding:0 24px;
+    --gap:32px;
 }
 
 * {
@@ -156,6 +158,7 @@ p {
     max-width: var(--container-width);
     margin: 0 auto;
     background-color: var(--bg-color);
+    padding: var(--padding);
 }
 
 /* --- Services List --- */
@@ -210,9 +213,8 @@ p {
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2 columns */
-    padding: 0 40px;
-    gap: 40px;
-    margin-bottom: 40px;
+    gap: var(--gap);
+    margin-bottom: var(--gap);
 }
 
 .info-card {
@@ -345,10 +347,9 @@ hr {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    gap: 40px;
+    gap: var(--gap);
     max-width: var(--container-width);
     width: 100%;
-    padding: 0 40px;
     box-sizing: border-box;
     margin-bottom: 10rem;
 }
@@ -502,7 +503,7 @@ hr {
 .bottom-right-group {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: var(--gap);
 }
 
 /* 信用卡片 */
@@ -571,7 +572,7 @@ hr {
 
 /* 手機與小型平板尺寸 (850px 以下) */
 @media (max-width: 850px) {
-    body { padding: 20px 15px; }
+    /* body { padding: 20px 15px; } */
     .bento-container {
         grid-template-columns: 1fr; /* 改為單欄佈局 */
     }
