@@ -12,6 +12,8 @@
     --header-height: 80px;
     --radius: 32px;
     --card-bg:#f8f8f8;
+    --padding:0 24px;
+    --gap:32px;
 }
 
 * {
@@ -62,12 +64,12 @@ p {
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 40px;
+    padding:var(--padding);
 }
 
 /* 左上角返回按鈕 */
 .back-nav {
-    margin-bottom: 40px;
+    margin: 40px 0;
 }
 
 .back-btn {
@@ -218,13 +220,13 @@ h1 {
 .layout-container {
     display: grid;
     grid-template-columns: 1fr 1fr; /* 左欄稍寬，右欄稍窄，可依需求調整 */
-    gap: 32px;
+    gap: var(--gap);
     width: 100%;
     max-width: var(--container-width);
     /* height: 80vh; 固定高度讓左欄可以撐滿 */
     /* min-height: 600px; */
     margin: 0 auto;
-    padding: 40px 40px 10rem 40px;
+    padding: var(--padding);
 }
 
 /* 通用卡片樣式 */
@@ -365,6 +367,6 @@ h1 {
         /* height: 400px; 手機版給定固定高度 */
     }
     .right-column {
-        gap: 40px;
+        gap: var(--gap);
     }
 }
