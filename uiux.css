@@ -187,7 +187,7 @@ h1 {
 .button-group {
     display: flex;
     gap: 20px;
-    margin-top: 40px;
+    margin: 3rem 0;
 }
 
 .btn {
@@ -250,7 +250,7 @@ h1 {
     /* height: 80vh; 固定高度讓左欄可以撐滿 */
     /* min-height: 600px; */
     margin: 0 auto;
-    padding: 40px 40px 10rem 40px;
+    padding: var(--padding);
 }
 
 /* 通用卡片樣式 */
