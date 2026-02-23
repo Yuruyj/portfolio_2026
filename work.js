@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // 先隱藏所有可能的內容區塊 (這裡假設你有給內容區塊一個共同 class 叫 .tab-content)
             // 如果沒有共同 class，你可以手動列出所有可能的 ID
-            const allContents = document.querySelectorAll('#ux, #ui-ux, #visual, .tab-content'); 
+            const allContents = document.querySelectorAll('#ux, #ui-ux, #visual, #award, #workshop, .tab-content'); 
             allContents.forEach(section => {
                 section.style.display = 'none'; // 或者移除 active class
                 section.classList.remove('active-content');
