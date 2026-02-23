@@ -8,12 +8,13 @@
     --gray-light: #d4d4d8;
     --gray-medium: #a1a1aa;
     --gray-dark: #71717a;
-    --container-width: 1440px;
+    --container-width: 1200px;
     --header-height: 80px;
     --radius: 32px;
-    --card-bg:#f8f8f8;
-    --padding:0 24px;
-    --gap:32px;
+    --card-bg: #f8f8f8;
+    --padding: 0 24px;
+    --gap: 32px;
+    --marginbottom: 8rem;
 }
 
 * {
@@ -27,21 +28,15 @@ html {
 }
 
 body {
-    font-family: var(--font-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    /* line-height: 1.5; */
     -webkit-font-smoothing: antialiased;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 a {
     text-decoration: none;
     color: inherit;
-}
-
-ul {
-    list-style: none;
 }
 
 button {
@@ -52,7 +47,7 @@ button {
 }
 
 p {
-    color: var(--text-gray-dark);
+    color: var(--gray-dark); /* 修正：原本為未定義的 --text-gray-dark */
     line-height: 1.6;
     margin-top: 0;
     margin-bottom: 24px;
@@ -64,7 +59,8 @@ p {
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding:var(--padding);
+    padding: var(--padding);
+    margin-bottom: var(--marginbottom);
 }
 
 /* 左上角返回按鈕 */
@@ -105,12 +101,6 @@ h1 {
     color: #000;
 }
 
-.subtitle {
-    font-size: 1.5rem;
-    color: #888;
-    font-weight: 400;
-}
-
 /* 分隔線 */
 .divider {
     height: 1px;
@@ -122,7 +112,7 @@ h1 {
 /* 主要內容網格 */
 .content-grid {
     display: grid;
-    grid-template-columns: 300px 1fr; /* 左側固定寬度，右側自適應 */
+    grid-template-columns: 300px 1fr;
     gap: 40px;
 }
 
@@ -143,6 +133,12 @@ h1 {
     margin-bottom: 32px;
 }
 
+.subtitle {
+    font-size: 1.5rem;
+    color: #888;
+    font-weight: 400;
+}
+
 /* 左側欄位 */
 .sidebar-item {
     margin-bottom: 32px;
@@ -156,7 +152,7 @@ h1 {
 
 /* 右側主要內容 */
 .main-column {
-    padding-top: 0; /* 對齊左側 */
+    padding-top: 0;
 }
 
 /* 按鈕區域 */
@@ -172,7 +168,7 @@ h1 {
     align-items: center;
     justify-content: center;
     padding: 16px 24px;
-    border-radius: 9999px; /* Pill shape */
+    border-radius: 9999px;
     border: 1px solid #e5e5e5;
     background-color: white;
     color: #111;
@@ -199,7 +195,7 @@ h1 {
 /* 響應式設計 (手機版) */
 @media (max-width: 768px) {
     .content-grid {
-        grid-template-columns: 1fr; /* 改為單欄 */
+        grid-template-columns: 1fr;
         gap: 0;
     }
 
@@ -208,31 +204,23 @@ h1 {
     }
 
     .button-group {
-        flex-direction: column; /* 按鈕垂直排列 */
+        flex-direction: column;
     }
-
-    /* 為了視覺順序，可以調整 grid-area，但在這個案例中直接堆疊即可 */
 }
-
-/* //// */
 
 /* 主要佈局容器 */
 .layout-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 左欄稍寬，右欄稍窄，可依需求調整 */
+    grid-template-columns: 1fr 1fr;
     gap: var(--gap);
     width: 100%;
     max-width: var(--container-width);
-    /* height: 80vh; 固定高度讓左欄可以撐滿 */
-    /* min-height: 600px; */
     margin: 0 auto;
-    padding: var(--padding);
 }
 
 /* 通用卡片樣式 */
 .card {
     background: var(--card-bg);
-    /* box-shadow: var(--shadow); */
     overflow: hidden;
     position: relative;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -245,10 +233,9 @@ h1 {
 
 .card:hover {
     transform: translateY(-4px);
-    /* box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1); */
 }
 
-/* 左側欄位 (對應原本的聊天介面) */
+/* 左側欄位 */
 .left-column {
     grid-column: 1;
     height: 600px;
@@ -267,7 +254,7 @@ h1 {
     height: 100%;
 }
 
-/* 右側上下卡片 (平分高度) */
+/* 右側上下卡片 */
 .right-top, .right-bottom {
     flex: 1;
     width: 100%;
@@ -277,11 +264,11 @@ h1 {
 .card img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 讓圖片填滿卡片且不變形 */
+    object-fit: cover;
     display: block;
 }
 
-/* 圖片上的提示文字 (可選) */
+/* 圖片上的提示文字 */
 .card::after {
     content: '點擊放大';
     position: absolute;
@@ -328,10 +315,9 @@ h1 {
     max-width: 90%;
     max-height: 90%;
     border-radius: 8px;
-    /* box-shadow: 0 0 50px rgba(0,0,0,0.5); */
     transform: scale(0.9);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: default; /* 避免在圖片上顯示縮小游標，除非點擊圖片也能關閉 */
+    cursor: default;
 }
 
 .lightbox.active img {
@@ -362,9 +348,6 @@ h1 {
         display: flex;
         flex-direction: column;
         height: auto;
-    }
-    .left-column, .right-column {
-        /* height: 400px; 手機版給定固定高度 */
     }
     .right-column {
         gap: var(--gap);
