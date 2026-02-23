@@ -14,6 +14,7 @@
     --card-bg:#f8f8f8;
     --padding:0 24px;
     --gap:32px;
+    --marginbottom:8rem;
 }
 
 * {
@@ -27,21 +28,15 @@ html {
 }
 
 body {
-    font-family: var(--font-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    /* line-height: 1.5; */
     -webkit-font-smoothing: antialiased;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 a {
     text-decoration: none;
     color: inherit;
-}
-
-ul {
-    list-style: none;
 }
 
 button {
@@ -65,6 +60,7 @@ p {
     max-width: var(--container-width);
     margin: 0 auto;
     padding: var(--padding);
+    margin-bottom: var(--marginbottom);
 }
 
 /* 左上角返回按鈕 */
@@ -234,8 +230,6 @@ h1 {
     .button-group {
         flex-direction: column; /* 按鈕垂直排列 */
     }
-
-    /* 為了視覺順序，可以調整 grid-area，但在這個案例中直接堆疊即可 */
 }
 
 /* //// */
@@ -247,8 +241,6 @@ h1 {
     gap: 32px;
     width: 100%;
     max-width: var(--container-width);
-    /* height: 80vh; 固定高度讓左欄可以撐滿 */
-    /* min-height: 600px; */
     margin: 0 auto;
     padding: var(--padding);
 }
@@ -256,7 +248,6 @@ h1 {
 /* 通用卡片樣式 */
 .card {
     background: var(--card-bg);
-    /* box-shadow: var(--shadow); */
     overflow: hidden;
     position: relative;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -269,7 +260,6 @@ h1 {
 
 .card:hover {
     transform: translateY(-4px);
-    /* box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1); */
 }
 
 .card-single {
@@ -283,7 +273,7 @@ h1 {
     border-radius: var(--radius);
 }
 
-/* 左側欄位 (對應原本的聊天介面) */
+/* 左側欄位 */
 .left-column {
     grid-column: 1;
     height: 600px;
@@ -363,10 +353,9 @@ h1 {
     max-width: 90%;
     max-height: 90%;
     border-radius: 8px;
-    /* box-shadow: 0 0 50px rgba(0,0,0,0.5); */
     transform: scale(0.9);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: default; /* 避免在圖片上顯示縮小游標，除非點擊圖片也能關閉 */
+    cursor: default; 
 }
 
 .lightbox.active img {
@@ -398,89 +387,17 @@ h1 {
         flex-direction: column;
         height: auto;
     }
-    .left-column, .right-column {
-        /* height: 400px; 手機版給定固定高度 */
-    }
     .right-column {
         gap: 40px;
     }
 }
 
-/* --- 響應式優化修正 (RWD) --- */
-
-/* 平板尺寸 (992px 以下) */
-@media (max-width: 992px) {
-    .bento-container {
-        grid-template-columns: 1fr 1.2fr;
-        gap: 16px;
-    }
-    .command-card { padding: 20px; }
-}
-
-/* 手機與小型平板尺寸 (850px 以下) */
-@media (max-width: 850px) {
-    /* body { padding: 20px 15px; } */
-    .bento-container {
-        grid-template-columns: 1fr; /* 改為單欄佈局 */
-    }
-    .feed-card, .command-card, .bottom-right-group {
-        order: unset; 
-        grid-row: auto;
-    }
-}
-
 /* 小型手機尺寸 (500px 以下) */
 @media (max-width: 500px) {
-    .bottom-right-group {
-        grid-template-columns: 1fr; /* 右下兩個小卡片在極小螢幕也改為單欄 */
-    }
     .card { padding: 20px; }
-    .tabs { margin-bottom: 16px; }
-    .release-bar { display: none; } /* 手機版隱藏桌面快捷鍵提示 */
-    .command-action { font-size: 14px; padding: 14px; }
 }
 
-@media (max-width: 1024px) {
-    .hero-title { font-size: 4rem; }
-    .contact-heading { font-size: 4rem; }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        height: 20px;
-    }
-    .nav-links { display: none; }
-    .navbar-inner {
-        justify-content: flex-end; /* 手機版讓漢堡選單靠右 */
-    }
-    .mobile-menu-btn { display: block; }
-    
-    .hero { padding: 0 20px; }
-    .hero-title { font-size: 3rem; }
-    .hero-desc { font-size: 1.125rem; }
-    
-    .projects-grid { grid-template-columns: 1fr; }
-    .projects-grid .project-card { border-right: none; }
-    
-    .about-grid { grid-template-columns: 1fr; }
-    .about-sidebar { margin-bottom: 20px; }
-    
-    .service-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-    
-    .contact-heading { font-size: 2.5rem; }
-    .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 32px;
-    }
-    .copyright { text-align: left; }
-}
-
-/* 新增：最右側欄位的樣式 */
+/* 最右側欄位的樣式 */
 .far-right-column {
     display: flex;
     flex-direction: column;
@@ -488,83 +405,9 @@ h1 {
     height: 100%; /* 跟隨 grid 高度 */
 }
 
-/* --- 2. 彈出視窗 (Modal) CSS --- */
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.modal-overlay.active {
-    display: flex;
-    opacity: 1;
-}
-
-.modal-content {
-    background: white;
-    width: 90%;
-    max-width: 1000px;
-    height: 85vh; /* PDF 通常比較長，我們把視窗拉高一點 */
-    border-radius: 16px;
-    position: relative;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    overflow: hidden;
-    transform: scale(0.95);
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.modal-overlay.active .modal-content {
-    transform: scale(1);
-}
-
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 25px; /* 為了避開 PDF 捲軸，稍微往左移一點 */
-    font-size: 30px;
-    color: #333;
-    cursor: pointer;
-    z-index: 20; /* 確保在 PDF 之上 */
-    background: rgba(255, 255, 255, 0.9);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.close-btn:hover {
-    background: #eee;
-}
-
 iframe {
     width: 100%;
     height: 100%;
     border: none;
     background-color: #f0f0f0;
-}
-
-.loading-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #888;
-    font-size: 14px;
-    z-index: 0;
 }
