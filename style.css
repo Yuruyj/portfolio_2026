@@ -13,7 +13,8 @@
     --radius: 32px;
     --card-bg:#f8f8f8;
     --padding:0 24px;
-    --gap:32px;
+    --gap:24px;
+    --marginbottom:8rem;
 }
 
 * {
@@ -218,11 +219,11 @@ p {
 }
 
 .info-card {
-    background-color: var(--card-bg);
+    /* background-color: var(--card-bg); */
     border-radius: 32px;
-    padding: 40px;
+    padding: 32px;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     box-sizing: border-box;
 }
 
@@ -351,7 +352,7 @@ hr {
     max-width: var(--container-width);
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 10rem;
+    margin-bottom: var(--marginbottom);
 }
 
 /* 通用卡片樣式 */
@@ -596,7 +597,7 @@ hr {
 /* //// */
 
 .footer-bottom {
-    margin-bottom: 8rem;
+    margin-bottom: var(--marginbottom);
 }
 
 .copyright {
