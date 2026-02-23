@@ -1,12 +1,15 @@
 // 1. 返回上一頁或回列表
 function goBackOrHome() {
+    // 1. 執行返回上一頁
     history.back();
-    // 防呆：如果 100 毫秒後還留在原頁面，強制跳轉
-    setTimeout(() => {
+    
+    // 2. 防呆機制：如果上一頁真的回不去 (例如沒有歷史紀錄)
+    // 頁面就不會切換，這時候 100 毫秒後就會強制執行下方的跳轉
+    // 反之，如果 history.back() 成功了，離開了此頁面，這段 setTimeout 就會被銷毀，不會執行。
+    setTimeout(function() {
         window.location.href = 'work.html';
     }, 100);
 }
-
 // --- 燈箱與放大功能 (整合重複邏輯) ---
 // 將 lightbox 和 zoom 抽離成共用函式，符合 DRY (Don't Repeat Yourself) 原則
 const toggleModal = (modalId, imgSrcId, src, activeClass = 'active') => {
