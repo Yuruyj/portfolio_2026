@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YuRu⎻Portfolio</title>
-    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="visual.css">
 </head>
 <body>
 
@@ -38,21 +38,6 @@
                         <span class="sidebar-text">Designer</span>
                     </div>
                 </div>
-
-                <!-- <div class="sidebar-item">
-                    <span class="section-label">Team</span>
-                    <div class="section-content">
-                        <span class="sidebar-text">Zane Shannon, Founder</span>
-                    </div>
-                </div> -->
-
-                <!-- <div class="sidebar-item">
-                    <span class="section-label">Tools</span>
-                    <div class="section-content">
-                        <span class="sidebar-text">Figma</span>
-                        <span class="sidebar-text">Linear</span>
-                    </div>
-                </div> -->
 
                 <div class="sidebar-item">
                     <span class="section-label">Timeline</span>
@@ -99,37 +84,36 @@
                 </div> -->
             </section>
         </div>
-    </div>
-
-    <div class="layout-container">
-        
-        <!-- 左邊一欄 -->
-        <div class="card left-column" onclick="openLightbox(this)">
-            <img src="img/MD page_0513-0515_MB.jpg" alt="Chat UI">
-        </div>
-
-        <!-- 右邊欄位容器 -->
-        <div class="right-column">
+    
+        <div class="layout-container">
             
-            <!-- 右上 -->
-            <div class="card right-top" onclick="openLightbox(this)">
-                <img src="img/KIE_PC.jpg" alt="Email UI">
+            <!-- 左邊一欄 -->
+            <div class="card left-column" onclick="openLightbox(this)">
+                <img src="img/MD page_0513-0515_MB.jpg" alt="Chat UI">
             </div>
 
-            <!-- 右下 -->
-            <div class="card right-bottom" onclick="openLightbox(this)">
-                <img src="img/KIE_PC2.jpg" alt="Profile UI">
-            </div>
+            <!-- 右邊欄位容器 -->
+            <div class="right-column">
+                
+                <!-- 右上 -->
+                <div class="card right-top" onclick="openLightbox(this)">
+                    <img src="img/KIE_PC.jpg" alt="Email UI">
+                </div>
 
+                <!-- 右下 -->
+                <div class="card right-bottom" onclick="openLightbox(this)">
+                    <img src="img/KIE_PC2.jpg" alt="Profile UI">
+                </div>
+
+            </div>
         </div>
     </div>
-
+    
     <!-- 燈箱元素 (預設隱藏) -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
         <span class="close-btn">&times;</span>
         <img id="lightbox-img" src="" alt="Full view" onclick="event.stopPropagation()">
     </div>
-    
 
     <script src="project.js"></script>
 </body>
