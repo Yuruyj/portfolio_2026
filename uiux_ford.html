@@ -8,10 +8,10 @@
 </head>
 <body>
 
-    <div class="container" style="max-width: 1440px;">
+    <div class="container">
         <!-- 返回按鈕 -->
         <nav class="back-nav">
-            <button class="back-btn" onclick="history.back()" aria-label="Go back">
+            <button class="back-btn" onclick="goBackOrHome()" aria-label="Go back">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="19" y1="12" x2="5" y2="12"></line>
                     <polyline points="12 19 5 12 12 5"></polyline>
@@ -45,14 +45,6 @@
                         <span class="sidebar-text">6+ members</span>
                     </div>
                 </div>
-
-                <!-- <div class="sidebar-item">
-                    <span class="section-label">Tools</span>
-                    <div class="section-content">
-                        <span class="sidebar-text">Figma</span>
-                        <span class="sidebar-text">Linear</span>
-                    </div>
-                </div> -->
 
                 <div class="sidebar-item">
                     <span class="section-label">Timeline</span>
@@ -111,9 +103,8 @@
                 <!-- 按鈕組 -->
                 <div class="button-group">
                     <!-- <a href="#" class="btn">Read Case Study</a> -->
-                    <a href="https://www.fordlioho.com.tw" style="max-width: 320px;" target="_blank" rel="noopener noreferrer" class="btn">
+                    <a href="https://www.fordlioho.com.tw" style="max-width: 280px;" target="_blank" rel="noopener noreferrer" class="btn">
                         Website
-                  
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="7" y1="17" x2="17" y2="7"></line>
                             <polyline points="7 7 17 7 17 17"></polyline>
@@ -122,36 +113,42 @@
                 </div>
             </section>
         </div>
-    </div>
 
-    <div class="layout-container" style="max-width: 1440px;margin-bottom: 10rem;grid-template-columns: 1.2fr 1fr 1fr;">
+        <div class="layout-container"> <!-- style="grid-template-columns: 1.2fr 1fr 1fr;" -->
         
-     
-        <div class="card left-column" onclick="openLightbox(this)">
-            <img src="img/Focus_PC.jpg" alt="Chat UI">
-        </div>
+            <div class="card left-column" onclick="openLightbox(this)">
+                <img src="img/Focus_PC.jpg" alt="Chat UI">
+            </div>
+        
+            <div class="right-column">
+                <div class="card right-top" onclick="openLightbox(this)">
+                    <img src="img/ford banner.png" alt="Email UI">
+                </div>
 
-       
-        <div class="right-column">
-            
-      
-            <div class="card right-top" onclick="openLightbox(this)">
-                <img src="img/ford banner.png" alt="Email UI">
+                <div class="card right-bottom" onclick="openLightbox(this)">
+                    <img src="img/ford 4 card.png" alt="Profile UI">
+                </div>
             </div>
 
-            <div class="card right-bottom" onclick="openLightbox(this)">
-                <img src="img/ford 4 card.png" alt="Profile UI">
+            <!-- <div class="far-right-column">
+                <div class="card left-column" onclick="openLightbox(this)">
+                    <img src="img/ford cardchange.png" alt="New Column UI">
+                </div>
+            </div> -->
+
+            <!-- <div class="far-right-column">
+                <div class="card left-column" onclick="openLightbox(this)">
+                    <img src="img/ford banner.png" alt="New Column UI">
+                </div>
             </div>
 
-        </div>
+            <div class="far-right-column">
+                <div class="card left-column" onclick="openLightbox(this)">
+                    <img src="img/ford 4 card.png" alt="New Column UI">
+                </div>
+            </div> -->
 
-        <div class="far-right-column">
-        
-        <div class="card left-column" onclick="openLightbox(this)">
-            <img src="img/ford cardchange.png" alt="New Column UI">
         </div>
-
-    </div>
     </div>
 
     <!-- 燈箱元素 (預設隱藏) -->
@@ -159,7 +156,6 @@
         <span class="close-btn">&times;</span>
         <img id="lightbox-img" src="" alt="Full view" onclick="event.stopPropagation()">
     </div>
-    
 
     <script src="project.js"></script>
 </body>
