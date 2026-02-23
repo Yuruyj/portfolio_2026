@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YuRu⎻Portfolio</title>
-    <link rel="stylesheet" href="uiux.css">
+    <link rel="stylesheet" href="ux.css">
 </head>
 <body>
 
     <div class="container">
         <!-- 返回按鈕 -->
         <nav class="back-nav">
-            <button class="back-btn" onclick="history.back()" aria-label="Go back">
+            <button class="back-btn" onclick="goBackOrHome()" aria-label="Go back">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="19" y1="12" x2="5" y2="12"></line>
                     <polyline points="12 19 5 12 12 5"></polyline>
@@ -22,8 +22,7 @@
         <!-- 標題區域 -->
         <header>
             <h1>Web3 身份防護系統 NFT 混合驗證研究</h1>
-            <div class="subtitle">edesigning financial identity verification<br>
-            by reducing NFT adoption barriers through hybrid validation design.</div>
+            <div class="subtitle">Financial Identity Verification by Reducing NFT Adoption Barriers Through Hybrid Validation Design</div>
         </header>
 
         <div class="divider"></div>
@@ -52,13 +51,6 @@
                         <span class="sidebar-text">Gemini · ChatGPT · NotebookLM · Lovart</span>
                     </div>
                 </div>
-
-                <!-- <div class="sidebar-item">
-                    <span class="section-label">Scope</span>
-                    <div class="section-content">
-                        <span class="sidebar-text">Problem framing · Behavioral research · Hypothesis design · A/B test modeling</span>
-                    </div>
-                </div> -->
 
                 <div class="sidebar-item">
                     <span class="section-label">Framework</span>
@@ -109,9 +101,11 @@
                 </div>
 
                 <!-- 按鈕組 -->
-                 <div class="button-group" style="max-width: 280px; margin-bottom: 3rem;">
+                <div class="button-group">
+                    <a href="https://unlock-soul.lovable.app" target="_blank" class="btn">驗證測試</a>
+  
                     <a href="javascript:void(0)" class="btn" onclick="openPDF('https://github.com/Yuruyj/portfolio_2026/blob/master/Web3_Security_Identity_and_Trust.pdf')">
-                    Read PDF
+                    Read PPT
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="7" y1="17" x2="17" y2="7"></line>
                             <polyline points="7 7 17 7 17 17"></polyline>
@@ -122,27 +116,21 @@
                 <div id="pdf-modal" class="modal-overlay" onclick="closePDF(event)">
                     <div class="modal-content">
                         <span class="close-btn" onclick="closePDF(event)">&times;</span>
-                        <!-- <div class="loading-text">正在載入 PDF...</div> -->
                         <iframe id="pdf-frame" src=""></iframe>
                     </div>
                 </div>
-                <!-- <div class="button-group" style="max-width: 280px; margin-bottom: 3rem;">
-                    <a href="#" class="btn">Read PPT
-                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="7" y1="17" x2="17" y2="7"></line>
-                            <polyline points="7 7 17 7 17 17"></polyline>
-                        </svg> 
-                    </a>
-                </div> -->
+                
             </section>
         </div>
 
-        <div class="card-single" style="max-width: 580px; margin: 0 auto;">
-            <img src="img/web3_1.png" alt="Chat UI">
-        </div>
+        <div class="image-row">
+            <div class="card-single" onclick="openLightbox(this)">
+                <img src="img/web3_1.png" alt="Chat UI">
+            </div>
 
-        <div class="single-img" style="max-width: 580px; margin: 0 auto;">
-            <img src="img/web3_2.png" alt="Chat UI" style="margin-top: 24px;">
+            <div class="single-img" onclick="openLightbox(this)">
+                <img src="img/web3_2.png" alt="Chat UI">
+            </div>
         </div>
 
         <div class="single-item">
@@ -153,9 +141,6 @@
                     <br>• 結合AI建立多項信任與採用相關假設，並以Vibe Coding 快速製作原型與 A/B Test 驗證使用者反應
                     <br>• 透過 A/B Test 驗證不同驗證組合、文案、動畫與回饋機制對信任感的影響</p>
                 </div>
-            <div class="single-img" style="max-width: 580px; margin: 0 auto;">
-                <img src="img/web3_3.png" alt="Chat UI" style="margin-top: 24px;">
-            </div>
         </div>
 
         <div class="single-item">
@@ -166,8 +151,15 @@
                     <br>• 金錢型回饋與優惠誘因，比抽象安全說明更能促進採用
                     <br>• 客服支援與清楚的安全處理流程，是建立信任的必要條件</p>
                 </div>
-            <div class="single-img" style="max-width: 580px; margin: 0 auto;">
-                <img src="img/web3_4.png" alt="Chat UI" style="margin-top: 24px;">
+        </div>
+
+        <div class="image-row">
+            <div class="card-single" onclick="openLightbox(this)">
+                <img src="img/web3_3.png" alt="Chat UI">
+            </div>
+
+            <div class="single-img" onclick="openLightbox(this)">
+                <img src="img/web3_4.png" alt="Chat UI">
             </div>
         </div>
 
@@ -184,10 +176,10 @@
 
         </div>
 
-        <div class="single-item" style="margin-bottom: 10rem;">
+        <div class="single-item">
             <span class="single-label">技術</span>
             <div class="single-content">
-                    <p>• 使用者訪談／問卷研究
+                <p>• 使用者訪談／問卷研究
                     <br>• COM-B 行為模型
                     <br>• 假設驗證
                     <br>• A/B Testing
@@ -196,41 +188,16 @@
                     <br>• Web3 / NFT 應用情境研究
                     <br>• 跨團隊共創與需求討論
                 </p>
-                </div>
-
+            </div>
         </div>
 
     </div>
 
-    
-<!-- 
-    <div class="layout-container">
-        
-        <div class="card left-column" onclick="openLightbox(this)">
-            <img src="img/Focus_OneAD.jpg" alt="Chat UI" style="object-position: center;">
-        </div>
-
-
-        <div class="right-column">
-            
-          
-            <div class="card right-top" onclick="openLightbox(this)">
-                <img src="img/index_ford kv.jpg" alt="Email UI">
-            </div>
-
-       
-            <div class="card right-bottom"onclick="openLightbox(this)">
-                <img src="img/ford2.jpg" alt="Email UI">
-            </div>
-
-        </div>
-    </div> -->
-
-    <!-- 燈箱元素 (預設隱藏)
+    <!-- 燈箱元素 (預設隱藏) -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
         <span class="close-btn">&times;</span>
         <img id="lightbox-img" src="" alt="Full view" onclick="event.stopPropagation()">
-    </div> -->
+    </div>
     
 
     <script src="project.js"></script>
