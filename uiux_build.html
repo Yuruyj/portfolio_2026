@@ -8,10 +8,10 @@
 </head>
 <body>
 
-    <div class="container" style="max-width: 1440px;">
+    <div class="container">
         <!-- 返回按鈕 -->
         <nav class="back-nav">
-            <button class="back-btn" onclick="history.back()" aria-label="Go back">
+            <button class="back-btn" onclick="goBackOrHome()" aria-label="Go back">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="19" y1="12" x2="5" y2="12"></line>
                     <polyline points="12 19 5 12 12 5"></polyline>
@@ -46,14 +46,6 @@
                     </div>
                 </div>
 
-                <!-- <div class="sidebar-item">
-                    <span class="section-label">Tools</span>
-                    <div class="section-content">
-                        <span class="sidebar-text">Figma</span>
-                        <span class="sidebar-text">Linear</span>
-                    </div>
-                </div> -->
-
                 <div class="sidebar-item">
                     <span class="section-label">Timeline</span>
                     <div class="section-content">
@@ -81,8 +73,8 @@
                 <div class="sidebar-item">
                     <span class="section-label">視覺策略</span>
                     <div class="section-content">
-                        <p>流動感的建立：透過漸變、動態滾動節奏與過場銜接，呈現時間推移，模組轉場設計模擬歷史軌跡延續。<br>
-                            菱形元素：象徵穩定結構，四向延伸代表品牌向不同世代延續，與一般版型形成視覺差異，建立識別。<br>
+                        <p>流動感的建立：透過漸變、動態滾動節奏與過場銜接，呈現時間推移，模組轉場設計模擬歷史軌跡的延續。<br>
+                            菱形元素：象徵穩定結構，四向延伸代表品牌向不同世代延續，建立視覺差異，提升識別。<br>
                             淡黃底色：作為時間沉澱感，接近舊紙張色調呼應歷史。</p>
                     </div>
                 </div>
@@ -104,7 +96,7 @@
                 <!-- 按鈕組 -->
                 <div class="button-group">
                     <!-- <a href="#" class="btn">Read Case Study</a> -->
-                    <a href="https://ho-chu.com" style="max-width: 320px;" target="_blank" rel="noopener noreferrer" class="btn">
+                    <a href="https://ho-chu.com" style="max-width: 280px;" target="_blank" rel="noopener noreferrer" class="btn">
                         Website
                   
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -115,35 +107,32 @@
                 </div>
             </section>
         </div>
-    </div>
 
-    <div class="layout-container" style="max-width: 1440px;margin-bottom: 10rem;grid-template-columns: 1.2fr 1fr 1fr;">
-        
-     
-        <div class="card left-column" onclick="openLightbox(this)">
-            <img src="img/build1.jpg" alt="Chat UI">
-        </div>
-
-       
-        <div class="right-column">
+        <div class="layout-container" style="grid-template-columns: 1.2fr 1fr 1fr;">
             
-      
-            <div class="card right-top" onclick="openLightbox(this)">
-                <img src="img/build phone.png" alt="Email UI">
+            <div class="card left-column" onclick="openLightbox(this)">
+                <img src="img/build1.jpg" alt="Chat UI">
             </div>
 
-            <!-- <div class="card right-bottom" onclick="openLightbox(this)">
-                <img src="img/KIE_PC2.jpg" alt="Profile UI">
-            </div> -->
-
-        </div>
-
-        <div class="far-right-column">
         
-        <div class="card left-column" onclick="openLightbox(this)">
-            <img src="img/build2.png" alt="New Column UI">
-        </div>
+            <div class="right-column">
+        
+                <div class="card right-top" onclick="openLightbox(this)">
+                    <img src="img/build phone.png" alt="Email UI">
+                </div>
 
+                <!-- <div class="card right-bottom" onclick="openLightbox(this)">
+                    <img src="img/KIE_PC2.jpg" alt="Profile UI">
+                </div> -->
+
+            </div>
+
+            <div class="far-right-column">
+                <div class="card left-column" onclick="openLightbox(this)">
+                    <img src="img/build2.png" alt="New Column UI">
+                </div>
+            </div>
+            
         </div>
     </div>
 
@@ -152,7 +141,6 @@
         <span class="close-btn">&times;</span>
         <img id="lightbox-img" src="" alt="Full view" onclick="event.stopPropagation()">
     </div>
-    
 
     <script src="project.js"></script>
 </body>
