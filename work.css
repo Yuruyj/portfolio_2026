@@ -276,6 +276,7 @@ p {
     /* auto-fill 會保留隱形的空欄位，防止少數項目過度拉伸 */
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
     gap: var(--gap);
+    margin-bottom: var(--marginbottom);
 }
 
 .project-card {
