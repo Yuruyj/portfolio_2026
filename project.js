@@ -1,100 +1,77 @@
+// 1. 返回上一頁或回列表
 function goBackOrHome() {
-    // 1. 執行返回上一頁
     history.back();
-    
-    // 2. 防呆機制：如果上一頁真的回不去 (例如沒有歷史紀錄)
-    // 頁面就不會切換，這時候 100 毫秒後就會強制執行下方的跳轉
-    // 反之，如果 history.back() 成功了，離開了此頁面，這段 setTimeout 就會被銷毀，不會執行。
-    setTimeout(function() {
+    // 防呆：如果 100 毫秒後還留在原頁面，強制跳轉
+    setTimeout(() => {
         window.location.href = 'work.html';
     }, 100);
 }
 
-// 開啟燈箱
-function openLightbox(element) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
+// --- 燈箱與放大功能 (整合重複邏輯) ---
+// 將 lightbox 和 zoom 抽離成共用函式，符合 DRY (Don't Repeat Yourself) 原則
+const toggleModal = (modalId, imgSrcId, src, activeClass = 'active') => {
+    const modal = document.getElementById(modalId);
+    if (!modal) return; // 避免找不到 DOM 節點時報錯
     
-    // 獲取被點擊卡片內的圖片來源
-    const src = element.querySelector('img').src;
-    
-    lightboxImg.src = src;
-    lightbox.classList.add('active');
-    
-    // 鎖定背景滾動
-    document.body.style.overflow = 'hidden';
-}
-
-// 關閉燈箱
-function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.classList.remove('active');
-    
-    // 恢復背景滾動
-    document.body.style.overflow = '';
-}
-
-// 鍵盤 ESC 關閉支援
-document.addEventListener('keydown', function(event) {
-    if (event.key === "Escape") {
-        closeLightbox();
+    if (src) {
+        // 開啟狀態
+        const img = document.getElementById(imgSrcId);
+        if (img) img.src = src;
+        modal.classList.add(activeClass);
+        document.body.style.overflow = 'hidden';
+    } else {
+        // 關閉狀態
+        modal.classList.remove(activeClass);
+        document.body.style.overflow = '';
     }
-        });
+};
 
-// 函數名稱也改得比較特殊一點
-function initiateZoom(element) {
-    const overlay = document.getElementById('overlay-viewer');
-    const targetImg = document.getElementById('overlay-img-target');
-    const src = element.querySelector('img').src;
-    
-    targetImg.src = src;
-    overlay.classList.add('is-active-mode');
-    document.body.style.overflow = 'hidden';
-}
+// 一般燈箱操作 (使用可選串連 ?. 避免沒有 img 標籤時報錯)
+const openLightbox = (element) => toggleModal('lightbox', 'lightbox-img', element.querySelector('img')?.src);
+const closeLightbox = () => toggleModal('lightbox', null, null);
 
-function dismissZoom() {
-    const overlay = document.getElementById('overlay-viewer');
-    overlay.classList.remove('is-active-mode');
-    document.body.style.overflow = '';
-}
+// 特殊放大燈箱操作
+const initiateZoom = (element) => toggleModal('overlay-viewer', 'overlay-img-target', element.querySelector('img')?.src, 'is-active-mode');
+const dismissZoom = () => toggleModal('overlay-viewer', null, null, 'is-active-mode');
 
-document.addEventListener('keydown', function(event) {
-    if (event.key === "Escape") {
-        dismissZoom();
-    }
-});
-
-function openPDF(githubUrl) {
+// --- PDF 預覽功能 ---
+const openPDF = (githubUrl) => {
     const modal = document.getElementById('pdf-modal');
     const frame = document.getElementById('pdf-frame');
-    
-    // 步驟 1：將一般的 GitHub 網址轉成 "Raw" (原始檔案) 網址
-    // 輸入：https://github.com/user/repo/blob/main/file.pdf
-    // 目標：https://raw.githubusercontent.com/user/repo/main/file.pdf
-    
-    let rawUrl = githubUrl;
-    
-    if (githubUrl.includes('github.com')) {
-        rawUrl = githubUrl
-            .replace('github.com', 'raw.githubusercontent.com')
-            .replace('/blob/', '/'); // 移除 blob 路徑
-    }
+    if (!modal || !frame) return;
 
-    // 步驟 2：使用 Google Docs Viewer 來預覽該 Raw 連結
-    // 這是目前最穩定的 PDF 嵌入方式
-    const viewerUrl = `https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(rawUrl)}`;
-    
-    // 設定並顯示
-    frame.src = viewerUrl;
+    // 將 GitHub 網址轉成 Raw 網址
+    const rawUrl = githubUrl.includes('github.com') 
+        ? githubUrl.replace('github.com', 'raw.githubusercontent.com').replace('/blob/', '/')
+        : githubUrl;
+
+    frame.src = `https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(rawUrl)}`;
     modal.classList.add('active');
-}
+    document.body.style.overflow = 'hidden'; // 建議開啟 PDF 時也鎖定背景滾動
+};
 
-function closePDF(event) {
-    if (event.target.id === 'pdf-modal' || event.target.classList.contains('close-btn')) {
+const closePDF = (event) => {
+    // 支援 ESC 關閉 (沒有 event) 或是點擊背景/關閉按鈕
+    if (!event || event.target.id === 'pdf-modal' || event.target.classList.contains('close-btn')) {
         const modal = document.getElementById('pdf-modal');
         const frame = document.getElementById('pdf-frame');
         
-        modal.classList.remove('active');
-        setTimeout(() => { frame.src = ""; }, 300); 
+        if (modal) modal.classList.remove('active');
+        document.body.style.overflow = ''; // 恢復背景滾動
+        
+        if (frame) {
+            setTimeout(() => { frame.src = ""; }, 300);
+        }
     }
-}
+};
+
+// --- 全域事件監聽 (整合 ESC 關閉功能) ---
+// 將原本分散的 keydown 事件合併成一個，提升效能並避免重複觸發
+document.addEventListener('keydown', (event) => {
+    if (event.key === "Escape") {
+        // 判斷目前哪個視窗是開啟的，就關閉對應的視窗
+        if (document.getElementById('lightbox')?.classList.contains('active')) closeLightbox();
+        if (document.getElementById('overlay-viewer')?.classList.contains('is-active-mode')) dismissZoom();
+        if (document.getElementById('pdf-modal')?.classList.contains('active')) closePDF();
+    }
+});
