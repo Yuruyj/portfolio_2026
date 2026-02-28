@@ -15,6 +15,7 @@
     --padding:0 24px;
     --gap:32px;
     --marginbottom:8rem;
+    --award:#a71919;
 }
 
 * {
@@ -247,7 +248,7 @@ hr {
 }
 
 .award {
-    color: #a71919;
+    color: var(--award);
 }
 
 /* 響應式容器 */
