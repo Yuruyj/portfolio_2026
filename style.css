@@ -246,6 +246,10 @@ hr {
     font-size: 1rem;
 }
 
+.award {
+    color: #a71919;
+}
+
 /* 響應式容器 */
 .bento-container {
     display: grid;
