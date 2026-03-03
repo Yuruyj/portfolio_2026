@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YuRu⎻Portfolio</title>
+    <link rel="stylesheet" href="ux.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- 返回按鈕 -->
+        <nav class="back-nav">
+            <button class="back-btn" onclick="goBackOrHome()" aria-label="Go back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- 標題區域 -->
+        <header>
+            <h1>數據驅動產品決策工作坊</h1>
+            <div class="subtitle">— PM × UI × UX × RD 跨職能遊戲化決策模擬系統設計與驗證</div>
+        </header>
+
+        <div class="divider"></div>
+
+        <!-- 內容區域 -->
+        <div class="content-grid">
+            <!-- 左側資訊欄 -->
+            <aside>
+                <div class="sidebar-item">
+                    <span class="section-label">My Role</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">UX Researcher / Product Strategy</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">Team</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">7 members</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">Tools</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">Felo · Perplexity · Gemini · ChatGPT · NotebookLM · Claude Code · lovable</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">Activity Time</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">2026/2/8</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 右側詳細說明 -->
+            <section class="main-column">
+                <div class="sidebar-item">
+                    <span class="section-label">核心價值</span>
+                    <div class="section-content">
+                        <p>將跨職能決策責任，轉化為可模擬、可分析、可驗證的行為系統。</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">背景與問題定義</span>
+                    <div class="section-content">
+                        <p>在高度不確定與資訊不對稱的產品開發環境中，決策品質往往比工具熟練度更直接影響產品成敗。市場觀察與使用者訪談顯示，多數 UX 學習仍以流程與方法為主，較少提供高擬真的跨職能決策情境，使設計師難以在學習場域中練習真實取捨。
+                        因此，我們重新定義問題：如何在不承擔真實風險的前提下，讓學習者體驗產品開發中的決策張力？</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">解決方案</span>
+                    <div class="section-content">
+                        <p>進行 UX 研究與策略設計，進行研究結構梳理、決策情境架構設計與行為分析維度建構。歷經：<br>市場與競品分析 → 專家訪談（1 人） → 使用者深訪（4 人） → 價值驗證（6 人） → 原型測試（5 人） → MVP 實測（11 人）
+                        。最終設計出一套跨職能遊戲化決策模擬系統，核心機制包含：<br>•	PM × UI × UX × RD 角色分工與資訊不對稱<br>•	限時壓力決策設計<br>•	結構化辯證與投票流程<br>•	AI 行為數據復盤機制
+                        <br>將產品開發中的衝突與取捨轉化為可觀察、可分析的行為模型。</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">成果與驗證</span>
+                    <div class="section-content">
+                        <p>MVP 測試結合質化與量化回饋，初步驗證系統可行性：<br>•	跨職能參與結構成立<br>•	學習效果、推薦意願與滿意度多集中於 8–10 分
+	                        <br>•	80% 願意參與進階版本<br>•	多數參與者願意支付 300–800 NTD / 小時<br>質化回饋顯示參與者明確感受到真實職場拉扯、提升跨職能理解，並看見自身決策盲點。</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">我的角色</span>
+                    <div class="section-content">
+                        <p>研究結構與驗證策略設計、遊戲化決策架構發想（以狼人殺機制為基礎轉化）、行為分析維度建構、MVP 數據整理與洞察轉化。</p>
+                    </div>
+                </div>
+
+
+                <!-- 按鈕組 -->
+                <div class="button-group">
+                    <a href="javascript:void(0)" class="btn" onclick="openPDF('https://github.com/Yuruyj/portfolio_2026/blob/master/Web3_Security_Identity_and_Trust.pdf')">
+                    Read PPT
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg> 
+                    </a>
+
+                    <a href="https://unlock-soul.lovable.app" target="_blank" class="btn">Game Entrance</a>
+                </div>
+
+                <div id="pdf-modal" class="modal-overlay" onclick="closePDF(event)">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closePDF(event)">&times;</span>
+                        <iframe id="pdf-frame" src=""></iframe>
+                    </div>
+                </div>
+                
+            </section>
+        </div>
+
+        <div class="image-row">
+            <div class="card-single">
+                <img src="img/ux workshop poc_discuss1.jpeg" alt="" onclick="openLightbox(this)">
+            </div>
+
+            <div class="single-img">
+                <img src="img/ux workshop poc_discuss2.jpg" alt="" onclick="openLightbox(this)">
+            </div>
+        </div>
+
+        <div class="single-item">
+            <span class="single-label">問題定義</span>
+            <div class="single-content">
+                <p><span class="single-second-text">市場現況</span><br>近年 UX 學習市場供給充足，多數課程聚焦於工具操作與流程方法，協助學習者建立基礎能力。然而，在實際產品開發環境中，真正影響產品成敗的往往不是流程熟練度，而是決策品質。
+                    產品開發通常伴隨資訊不對稱、時間壓力與角色立場差異，但這類情境在多數學習場域中較少被高擬真模擬。</p>
+                <p><span class="single-second-text">使用者痛點</span><br>透過市場觀察與使用者訪談，我們歸納出三項核心痛點：
+                    <br><strong>1. 缺乏跨職能決策經驗</strong><br>多數設計師較少在學習場域中練習與 PM、工程等角色進行真實取捨與協作。
+                    <br><strong>2. 理論學習難以遷移到實務</strong><br>學習者希望更貼近真實專案節奏，而非單向知識吸收。
+                    <br><strong>3. 需要明確的能力回饋與成長證據</strong><br>訪談與問卷顯示，學習者高度重視「復盤」與「成長可視化」，希望理解自己的決策盲點與改進方向。
+                </p>
+                <p><span class="single-second-text">現有學習方案的邊界與延伸可能</span><br>現行課程多以內容傳遞為核心交付形式，較難同時滿足：
+                    <br>&emsp;•	在有限時間內創造真實決策張力
+                    <br>&emsp;•	提供低門檻但高投入感的學習體驗
+                    <br>&emsp;•	將討論過程轉化為可分析、可追溯的能力證據
+                    <br>當決策情境缺乏壓力與資訊落差，學習效果往往停留在理解層面，而非行為層面。
+                </p>
+                <p><span class="single-second-text">重新定義問題</span><br>基於上述觀察，我們將問題重新定義為：
+                    <br>能否設計一套低門檻、可重複模擬的跨職能決策練習機制，並在每次決策後，透過結構化復盤將行為轉化為可分析、可驗證的能力證據？
+                    <br>&emsp;•	以遊戲化機制降低學習摩擦與提升參與動機
+                    <br>&emsp;•	透過資訊不對稱與角色分工重建真實決策張力
+                    <br>&emsp;•	導入行為數據與 AI 復盤，讓學習結果具體可見
+                </p>
+            </div>
+        </div>
+
+        <div class="single-item">
+            <span class="single-label">研究與驗證策略</span>
+            <div class="single-content">
+                <p><span class="single-second-text">研究方法</span><br>採用「假設驅動 × 多階段驗證」策略，而非一次性設計。研究流程包含：
+                    <br><strong>1. 市場與競品分析</strong><br>使用 AI 工具進行市場缺口與競品定位分析，確認「決策責任」與「跨職能張力」為潛在地帶。
+                    <br><strong>2. 專家訪談（1 人）</strong><br>驗證產業對決策能力的期待與能力斷層現象。
+                    <br><strong>3. 使用者深度訪談（4 人）</strong><br>理解學習痛點、參與動機、付費可能、偏好取向與對理論課程的優化建議。
+                    <br><strong>4. 價值驗證（6 人）</strong><br>測試核心概念是否具吸引力與實際需求。
+                    <br><strong>5. 原型測試（5 人）</strong><br>測試遊戲化方向是否足以產生投入與張力。
+                    <br><strong>6. MVP 實測（工作坊 11 人）</strong><br>驗證完整機制的學習效果、參與體驗與付費意願。
+                </p>
+                <p><span class="single-second-text">受訪結構</span><br>為確保情境真實性與跨職能張力，研究對象涵蓋：
+                    <br>&emsp;•	UI / UX 設計師
+                    <br>&emsp;•	PM
+                    <br>&emsp;•	RD
+                    <br>&emsp;•	DA
+                    <p>MVP 參與者亦維持跨職能比例，以模擬真實產品開發環境中的資訊不對稱與立場差異。這樣的分布確保：
+                        <br>&emsp;•	不僅是單一角色視角
+                        <br>&emsp;•	能重現跨角色決策動態
+                    </p>
+                </p>
+                <p><span class="single-second-text">為何這樣設計驗證路徑？</span><br>驗證邏輯不是驗證「遊戲好不好玩」，而是驗證三個核心假設：
+                    <br><strong>1. </strong>跨職能角色衝突是否能創造真實決策張力
+                    <br><strong>2. </strong>遊戲化是否能降低學習門檻並提升投入度
+                    <br><strong>3. </strong>行為復盤是否能轉化為能力證據
+                    <p>因此我們採用「由小到大」的驗證節奏：
+                        <br>&emsp;•	先驗證需求（訪談）
+                        <br>&emsp;•	再驗證概念（價值驗證）
+                        <br>&emsp;•	再驗證機制（原型測試）
+                        <br>&emsp;•	最後驗證完整體驗與數據結果（MVP）
+                    </p>
+                    <p>這樣的分段設計，可以：降低錯誤投入成本、在早期推翻不適合的遊戲化方向、逐步逼近最終可行模型。<br>例如，在早期原型階段，我們曾測試多種遊戲化機制，但因缺乏張力或造成心理摩擦而淘汰；最終選擇以「對抗式陣營與資訊不對稱」作為結構骨架，兼顧衝突與心理安全。</p>
+                </p>
+            </div>
+        </div>
+
+        <!-- <div class="image-row">
+            <div class="card-single" onclick="openLightbox(this)">
+                <img src="img/web3_3.png" alt="">
+            </div>
+
+            <div class="single-img" onclick="openLightbox(this)">
+                <img src="img/web3_4.png" alt="">
+            </div>
+        </div> -->
+
+        <div class="single-item">
+            <span class="single-label">關鍵洞察</span>
+            <div class="single-content">
+                <!-- <p><span class="single-second-text">洞察一：決策能力無法透過旁聽學會，必須在壓力下做選擇</span><br><strong>研究觀察</strong>
+                    <br>&emsp;•	多位受訪者提到，真正成長來自「被迫做決定」而不是聽案例。
+                    <br>&emsp;•	專家訪談指出，當學習場域缺乏張力與立場對抗時，參與者的投入與情緒波動會維持在低區間，難以產生深層記憶。
+                    <br>特別是在專家訪談中提到：分組對抗形式會將情緒拉到較高區間，使參與者更投入並產生真實博弈感。
+                    <br><strong>設計轉化</strong>
+                    <br>&emsp;•	導入「陣營對抗」機制（守望者 vs 陰影）
+                    <br>&emsp;•	設計角色立場衝突與資訊不對稱
+                    <br>&emsp;•	加入投票與限時決策
+                    <br>— 目的不是競爭本身，而是讓決策具有情緒張力與後果意識。
+                </p>
+
+                <p><span class="single-second-text">洞察二：學習者真正想要的是「決策後的復盤」，而不是體驗本身</span><br><strong>研究觀察</strong>
+                    <br>&emsp;•	多訪談與問卷中，多數受訪者強調希望知道：
+                    <br>&emsp;&emsp;•	為什麼自己會做出某個選擇？
+                    <br>&emsp;&emsp;•	是否有盲點？
+                    <br>&emsp;&emsp;•	下次可以怎麼改？
+                    <br>&emsp;•	遊戲後復盤被多次提及為最重要功能。
+                    <br><strong>設計轉化</strong>
+                    <br>&emsp;•	建立 AI 行為紀錄與分析機制
+                    <br>&emsp;•	將討論過程轉為：
+                    <br>&emsp;&emsp;•	風險傾向
+                    <br>&emsp;&emsp;•	角色影響力
+                    <br>&emsp;&emsp;•	決策路徑分析
+                    <br>&emsp;•	產出個人「審判卡」與團隊報告
+                    <br>— 將主觀體驗轉化為可視化能力證據。
+                </p>
+
+                <p><span class="single-second-text">洞察三：門檻與規則複雜度直接影響留存</span><br><strong>研究觀察</strong>
+                    <br>&emsp;•	多位受訪者提到，如果規則過於複雜或不知道下一步要做什麼，會感到焦慮。
+                    <br>&emsp;•	轉職者特別容易在跨職能情境中失去信心。
+                    <br><strong>設計轉化</strong>
+                    <br>&emsp;•	將流程切為短回合（獨立思考 → 討論 → 投票）
+                    <br>&emsp;•	設計清楚階段提示與流程引導
+                    <br>&emsp;•	保留心理安全（避免淘汰與羞辱機制）
+                    <br>— 遊戲化在此的角色不是娛樂，而是降低 cognitive load。
+                </p>
+
+                <p><span class="single-second-text">洞察四：學習動機來自「貼近真實工作」</span><br><strong>研究觀察</strong>
+                    <br>&emsp;•	受訪者對純理論課程產生疲乏。
+                    <br>&emsp;•	希望情境能貼近真實產品開發節奏與衝突。
+                    <br><strong>設計轉化</strong>
+                    <br>&emsp;•	情境設計圍繞真實產品決策問題
+                    <br>&emsp;•	設定產品 HP 機制模擬專案成敗
+                    <br>&emsp;•	保留資訊不完整與商業壓力元素
+                    <br>— 讓學習場域具備「真實決策模擬」屬性，而非抽象練習。
+                </p> -->
+                <div class="card-single" onclick="openLightbox(this)">
+                    <img src="img/ux workshop_key.jpg" alt="">
+                </div>
+
+                <p><span class="single-second-text">結構性總結</span><br><strong>這四個洞察共同導向三個設計原則：</strong>
+                    <br><strong>1. </strong>必須創造決策張力
+                    <br><strong>2. </strong>必須產出能力證據
+                    <br><strong>3. </strong>必須控制門檻與心理安全
+                    <br>這使遊戲化成為策略選擇，而不是創意包裝。
+                </p>
+            </div>
+        </div>
+
+        
+
+        <div class="single-item">
+            <span class="single-label">設計決策與系統架構</span>
+            <div class="card-single" onclick="openLightbox(this)">
+                <img src="img/ux workshop_sysrem-2.jpg" alt="">
+            </div>
+            <div class="single-content">
+                <p><span class="single-second-text">四個設計原則</span><br>
+                    <br><strong>1. 張力優先：</strong>沒有壓力就沒有決策行為。
+                    <br><strong>2. 真實性優先：</strong>以資訊不對稱重建真實職場環境。
+                    <br><strong>3. 低門檻參與：</strong>遊戲化作為學習介面，而非娛樂元素。
+                    <br><strong>4. 證據導向：</strong>體驗必須轉化為可視化成長與復盤資料。
+                </p>
+            </div>
+        </div>
+
+        <div class="single-item">
+            <span class="single-label">原型迭代與 MVP 驗證</span>
+            <div class="single-content">
+                <p><span class="single-second-text">原型測試學到什麼？</span>
+                    <br><strong>1. 規則複雜度過高（關鍵問題）</strong>
+                    <br>多數非桌遊玩家：無法理解「正反派如何操作才算贏」、規則記憶成本過高、容易在第一回合就失去投入感
+                    <br>👉 學到：策略可以複雜，但規則必須簡單。
+                    <br><strong>2. 玩家真正重視的是「復盤」</strong>
+                    <br>在價值驗證與原型訪談中出現：「我的盲點在哪？」、「這決策邏輯是否合理？」
+                    <br>👉 學到：遊戲不是核心，復盤才是產品的靈魂。（訪談已明確指出復盤為高度期待項目）
+                    <br><strong>3. 時間設計影響沉浸度</strong>
+                    <br>使用者明確偏好：單局 10–20 分鐘、三回合內完成、不能被綁超過 30 分鐘
+                    <br>👉 MVP 改為：20 分鐘 × 3 回合結構、資訊卡牌化、降低長文閱讀
+                    <br><strong>4. 需要即時引導</strong>
+                    <br>玩家卡關時：不知道怎麼發言、討論易發散、強勢角色易壓制場面
+                    <br>👉 加入：卡牌話術提示、主持人引導機制、行為標記系統
+                </p>
+                <div class="image-row">
+                    <div class="card-single" onclick="openLightbox(this)">
+                        <img src="img/ux workshop_changMVP.jpg" alt="">
+                    </div>
+
+                    <div class="single-img" onclick="openLightbox(this)">
+                        <img src="img/ux workshop_asume.jpg" alt="">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="single-item">
+            <span class="single-label">成果與數據</span>
+            <div class="single-content">
+                <div class="image-row">
+                    <div class="card-single" onclick="openLightbox(this)">
+                        <img src="img/ux workshop_resault.jpg" alt="">
+                    </div>
+
+                    <div class="single-img" onclick="openLightbox(this)" style="max-width: 300px;">
+                        <img src="img/ux workshop MVP_score.jpg" alt="">
+                    </div>
+                </div>
+
+                <p>在 11 人 MVP 測試中，我們驗證了：
+                    <br><strong>&emsp;"高壓決策模擬能創造真實認知衝擊"</strong>
+                    <br><strong>&emsp;"復盤機制是學習價值核心"</strong>
+                    <br><strong>&emsp;"使用者具有實際支付意願"</strong>
+                    <br>這不只是一次工作坊，而是一個可量化決策能力的系統雛型。
+                </p>
+            </div>
+        </div>
+
+        <div class="single-item">
+            <span class="single-label">商業化與擴展潛力</span>
+            <div class="single-content">
+                <div class="image-row">
+                    <div class="card-single" onclick="openLightbox(this)">
+                        <img src="img/ux workshop_commercail.jpg" alt="">
+                    </div>
+                </div>
+                <p>這是一個可持續更新場景、可累積決策數據、並能延伸至企業訓練市場的行為模擬系統。</p>
+            </div>
+        </div>
+
+        <div class="single-item">
+            <span class="single-label">反思與優化方向</span>
+            <div class="single-content">
+                <p><span class="single-second-text">一、若重新設計，我會怎麼做？</span><br><strong>1. 更早建立「新手引導機制」</strong>
+                    <br>&emsp;•	會從 Day 1 就設計「一回合示範局」
+                    <br>&emsp;•	設計 Progressive Onboarding（功能逐步解鎖）
+                    <br>&emsp;•	把複雜度隱藏在系統，而不是放在規則文字
+                    <br>👉 學到：策略可以深，但入口必須輕。
+                </p>
+
+                <p><strong>2. 從一開始就設計數據結構（目前行為紀錄仍有人工標記成分）</strong>
+                    <br>&emsp;•	會優先設計完整的行為資料結構
+                    <br>&emsp;•	明確定義每個指標的計算邏輯
+                    <br>&emsp;•	預先規劃未來自動化版本
+                    <br>👉 讓 MVP 就具備資料資產視角。
+                </p>
+
+                <p><strong>2. 更早測試商業場景差異（目前測試族群偏向學習者 B2C ）</strong>
+                    <br>&emsp;•	會同時做小規模企業內測
+                    <br>&emsp;•	驗證 B2B 與 B2C 的需求差異
+                    <br>&emsp;•	及早確認市場定位
+                </p>
+
+                <p><span class="single-second-text">二、哪些假設仍需驗證？</span><br><strong>❓ 假設一：決策能力可以被穩定量化</strong>
+                    <br>目前透過：發言頻率、投票結果、說服成功率、推估決策傾向。但仍需驗證：
+                    <br>&emsp;•	是否具有跨場次穩定性？
+                    <br>&emsp;•	是否能與真實職場表現產生關聯？
+                    <br>— 需要更大樣本數據。
+                </p>
+
+                <p><strong>❓ 假設二：遊戲化不會削弱專業信任感</strong>
+                    <br>專家曾提到企業案例過度遊戲化可能削弱理性信任，目前我們透過世界觀建立減少說教感，但仍需驗證：
+                    <br>&emsp;•	在企業環境中是否仍被視為專業工具？
+                    <br>&emsp;•	是否需要雙版本（學習版 / 企業版）？
+                </p>
+
+                <p><strong>❓ 假設三：復盤足以創造長期黏著</strong>
+                    <br>訪談結果高度支持復盤價值，但尚未驗證：
+                    <br>&emsp;•	使用者是否會重複參與？
+                    <br>&emsp;•	是否會推薦給同事？
+                    <br>&emsp;•	是否能形成長期訂閱模式？
+                </p>
+
+                <p><span class="single-second-text">三、最大風險</span><br><strong>⚠️ 風險一：樣本規模過小（目前 MVP 為 11 人）</strong>
+                    <br>&emsp;•	雖有強烈訊號，但統計可信度仍有限，若直接擴張，可能誤判市場規模。
+                </p>
+
+                <p><strong>⚠️ 風險二：規則複雜度再次膨脹</strong>
+                    <br>&emsp;•	每新增一個功能，都可能提高認知門檻和破壞流暢度，這是策略型產品常見風險。
+                </p>
+
+                <p><strong>⚠️ 風險三：定位模糊</strong>
+                    <br>&emsp;•	這個系統可能被理解為：桌遊、UX 課程、團建活動、顧問工具，若定位不清，市場溝通成本會很高。
+                </p>
+
+                <p>這個專案目前仍是一個驗證階段的決策模擬系統。真正的挑戰不在於設計一場好玩的體驗，而在於證明決策行為可以被穩定測量，並對真實職場產生可預測影響。</p>
+            </div>
+        </div>
+
+        <div class="single-item">
+            <span class="single-label">技術能力</span>
+            <p>這個專案讓我從 UX 執行者，轉向能設計決策能力系統的產品思考者。我不僅關注使用者體驗，更關注行為如何被結構化、量化與驗證。</p>
+            <div class="single-content">
+                <p><span class="single-second-text">市場問題轉為可驗證假設</span><br><strong>使用的方法</strong>
+                    <br>&emsp;•	雙鑽石模型（Discover → Define → Develop → Deliver）
+                    <br>&emsp;•	第一性原理拆解問題
+                    <br>&emsp;•	訪談歸納 → 可驗證假設設計
+                    <br>&emsp;•	價值驗證 → 原型測試 → MVP 實測
+                    <br><strong>技術思維</strong>
+                    <br>&emsp;•	問題拆解為「可觀察行為」
+                    <br>&emsp;•	將抽象能力轉為「行為指標」
+                </p>
+
+                <p><span class="single-second-text">導入 AI 與 RAG，並建立行為復盤系統</span>
+                    <br>&emsp;•	系統一 / 系統二（決策心理模型）
+                    <br>&emsp;•	資訊不對稱設計（情境建構）
+                    <br>&emsp;•	Scaffolding（認知負荷控制）
+                    <br>&emsp;•	Time-boxed 行為實驗
+                    <br>&emsp;•	A/B 原型迭代
+                    <br>&emsp;•	MECE 框架
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 燈箱元素 (預設隱藏) -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Full view" onclick="event.stopPropagation()">
+    </div>
+    
+
+    <script src="project.js"></script>
+</body>
+</html>
