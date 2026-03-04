@@ -353,3 +353,67 @@ h1 {
         gap: var(--gap);
     }
 }
+
+/* --- 影片 RWD 與滿版設定 --- */
+.card video.responsive-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 讓影片完美填滿卡片且保持比例不變形 */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* 讓影片在 hover 時也能有圖片放大的微小動態體驗 */
+.card:hover video.responsive-video {
+    transform: scale(1.03);
+}
+
+/* --- 影片 Hover 播放視覺提示 --- */
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    pointer-events: none; /* 確保點擊事件能穿透到外層卡片 */
+    z-index: 2;
+}
+
+.card:hover .play-overlay {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* --- 影片 Lightbox 專屬樣式 --- */
+.video-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 1000px; /* 限制最大寬度，避免在大螢幕過度放大 */
+    aspect-ratio: 16 / 9; /* 鎖定影片比例 */
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: default; /* 覆蓋掉燈箱外層的 zoom-out 鼠標 */
+}
+
+#video-lightbox.active .video-wrapper {
+    transform: scale(1);
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    display: block;
+}
