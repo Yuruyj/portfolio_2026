@@ -349,7 +349,7 @@ hr {
 /* 信用卡片 */
 .credit-card1 {
     border: none;
-    background: linear-gradient(135deg, #f8f8f8, #f0f0f0);
+    background: #f8f8f8;
     color: var(--text-color);
     display: flex;
     flex-direction: column;
