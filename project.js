@@ -78,3 +78,45 @@ document.addEventListener('keydown', (event) => {
         if (document.getElementById('pdf-modal')?.classList.contains('active')) closePDF();
     }
 });
+
+// --- 影片燈箱功能 ---
+
+// 開啟影片燈箱
+const openVideoLightbox = (videoSrc) => {
+    const modal = document.getElementById('video-lightbox');
+    const video = document.getElementById('lightbox-video');
+    if (!modal || !video) return;
+
+    video.src = videoSrc;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // 鎖定背景滾動
+    video.play(); // 自動開始播放
+};
+
+// 關閉影片燈箱
+const closeVideoLightbox = (event) => {
+    // 確保點擊的是背景或關閉按鈕，而不是點到影片本身
+    if (!event || event.target.id === 'video-lightbox' || event.target.classList.contains('close-btn')) {
+        const modal = document.getElementById('video-lightbox');
+        const video = document.getElementById('lightbox-video');
+        
+        if (modal) modal.classList.remove('active');
+        document.body.style.overflow = ''; // 恢復背景滾動
+        
+        if (video) {
+            video.pause(); // 暫停播放
+            setTimeout(() => { video.src = ""; }, 300); // 清空來源，節省資源並重置狀態
+        }
+    }
+};
+
+// --- 全域事件監聽 (更新 ESC 關閉功能，加入影片燈箱判斷) ---
+document.addEventListener('keydown', (event) => {
+    if (event.key === "Escape") {
+        if (document.getElementById('lightbox')?.classList.contains('active')) closeLightbox();
+        if (document.getElementById('overlay-viewer')?.classList.contains('is-active-mode')) dismissZoom();
+        if (document.getElementById('pdf-modal')?.classList.contains('active')) closePDF();
+        // 新增這行：處理影片燈箱的 ESC 關閉
+        if (document.getElementById('video-lightbox')?.classList.contains('active')) closeVideoLightbox(event);
+    }
+});
