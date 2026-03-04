@@ -102,11 +102,25 @@
                 </div>
 
                 <!-- 右下 -->
-                <div class="card right-bottom">
-                    <video width="680" height="340" autoplay muted playsinline loop>
+                <div class="card right-bottom" onclick="openVideoLightbox('img/PC1.mp4')">
+                    <video class="responsive-video" autoplay muted playsinline loop>
                         <source src="img/PC1.mp4" type="video/mp4">
                         您的瀏覽器不支援 HTML5 影片播放。
                     </video>
+                    <div class="play-overlay">
+                        <svg viewBox="0 0 24 24" fill="white" width="48" height="48">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div id="video-lightbox" class="lightbox" onclick="closeVideoLightbox(event)">
+                    <span class="close-btn" onclick="closeVideoLightbox(event)">&times;</span>
+                    <div class="video-wrapper">
+                        <video id="lightbox-video" controls playsinline>
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
 
             </div>
