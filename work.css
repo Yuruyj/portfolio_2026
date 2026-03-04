@@ -391,3 +391,126 @@ p {
         top: 15px;
     }
 }
+
+/* --- 新增：四欄的 Grid 設定 --- */
+.projects-grid-4 {
+    display: grid;
+    /* 強制四欄排版 */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: var(--gap);
+    margin-bottom: 5rem;
+}
+
+/* 四欄的 RWD (響應式) 設定，避免手機看四欄太擠 */
+@media (max-width: 1024px) {
+    .projects-grid-4 { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+    .projects-grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+    .projects-grid-4 { grid-template-columns: 1fr; }
+}
+
+/* --- 新增：圖片放大的 Lightbox 樣式 --- */
+.zoomable {
+    cursor: zoom-in; 
+    position: relative; /* 新增：確保層級正確 */
+    z-index: 1;         /* 新增：避免被其他透明元素蓋住點擊判定 */
+    pointer-events: auto; /* 新增：強制允許點擊 */
+}
+
+/* 彈出視窗的背景 */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* 半透明黑底 */
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* 顯示時的樣式 */
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+/* 彈出視窗內的圖片 */
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    transform: scale(0.8);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+/* 關閉按鈕 (右上角的 X) */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10000;
+}
+
+.close-modal:hover {
+    color: #bbb;
+}
+
+/* --- 幻燈片切換按鈕樣式 --- */
+.nav-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px 24px;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    transition: background-color 0.3s ease;
+    user-select: none; /* 防止使用者點擊時反白選取到文字 */
+    -webkit-user-select: none;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.2); /* 微微透明的底色 */
+}
+
+.nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+    left: 10px;
+    border-radius: 8px;
+}
+
+.next-btn {
+    right: 10px;
+    border-radius: 8px;
+}
+
+/* 確保圖片放大時不會蓋到按鈕 (特別是在手機端) */
+@media (max-width: 768px) {
+    .nav-btn {
+        font-size: 24px;
+        padding: 12px 16px;
+    }
+}
