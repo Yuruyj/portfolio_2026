@@ -16,7 +16,7 @@
     --padding:0 24px;
     --gap:32px;
     --marginbottom:8rem;
-    --award:#e96900;
+    --tag:#deb66e;
 }
 
 * {
@@ -56,10 +56,6 @@ p {
     margin-bottom: 24px;
     font-weight: 400;
     letter-spacing: -0.2px;
-}
-
-.award {
-    color: var(--award);
 }
 
 /* --- Navigation --- */
