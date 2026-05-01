@@ -297,7 +297,6 @@ hr {
 
 /* 左側 Feed 面板 */
 .feed-card {
-    grid-row: span 2;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -339,19 +338,26 @@ hr {
 /* 右下側分組 */
 .bottom-right-group {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* 保持兩欄，四格會自動排成 2x2 */
     gap: var(--gap);
 }
 
 /* 信用卡片 */
 .credit-card1 {
     border: none;
-    background: #f8f8f8;
+    border: 1px solid var(--border-color);
     color: var(--text-color);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 180px;
+}
+
+.credit-card1 a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .credit-card2 {
@@ -429,9 +435,12 @@ hr {
     .bento-container {
         grid-template-columns: 1fr;
     }
-    .feed-card, .command-card, .bottom-right-group {
+    .feed-card, .command-card {
         order: unset; 
         grid-row: auto;
+    }
+    .bottom-right-group {
+        grid-template-columns: 1fr; /* 切換為單欄 */
     }
 }
 
