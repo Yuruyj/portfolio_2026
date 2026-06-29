@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YuRu⎻Portfolio</title>
+    <link rel="stylesheet" href="ux.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- 返回按鈕 -->
+        <nav class="back-nav">
+            <button class="back-btn" onclick="goBackOrHome()" aria-label="Go back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- 標題區域 -->
+        <header>
+            <h1>家庭照護數位聯絡簿</h1>
+            <div class="subtitle">醫療數位化</div>
+        </header>
+
+        <div class="divider"></div>
+
+        <!-- 內容區域 -->
+        <div class="content-grid">
+            <!-- 左側資訊欄 -->
+            <aside>
+                <div class="sidebar-item">
+                    <span class="section-label">My Role</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">UX Researcher, Product Strategy</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">Team</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">3 members</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="section-label">Tools</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">Felo · Perplexity · Gemini · ChatGPT · NotebookLM · Lovart</span>
+                    </div>
+                </div>
+
+                <!-- <div class="sidebar-item">
+                    <span class="section-label">Framework</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">COM-B Behavior Model</span>
+                    </div>
+                </div> -->
+
+                <div class="sidebar-item">
+                    <span class="section-label">Timeline</span>
+                    <div class="section-content">
+                        <span class="sidebar-text">2026/04</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 右側詳細說明 -->
+            <section class="main-column">
+
+                <div class="sidebar-item">
+                    <span class="section-label">專案背景/特色</span>
+                    <div class="section-content">
+                        <p>企業背景為馬偕護校家庭醫療護照專案研究。<br>本專案以家庭照護情境為核心，探討家屬、居服員與醫療／長照端在照護過程中的資訊落差與溝通問題。隨著高齡化社會加速，居家照護、多位家屬共同協作、跨醫療與長照單位的情境越來越常見，但照護資訊往往分散於紙本、LINE、Excel、口頭交接與不同醫療系統中，導致家屬很難快速掌握長輩狀況。
+                            <br>本專案透過：<br>•&ensp;9 位照護經驗者訪談<br>•&ensp;職能治療師訪談<br>•&ensp;居服員訪談<br>•&ensp;長照機構主任訪談<br>•&ensp;Prototype 測試與驗證<br>重新整理高齡照護中的資訊與協作問題，並嘗試規劃一套更符合真實照護現場的數位溝通方式。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 按鈕組 -->
+                <div class="button-group" style="max-width: 320px;">
+                    <a href="https://preview--path-pilgrim.lovable.app/onboarding" target="_blank" class="btn">驗證畫面</a>
+  
+                    <!-- <a href="javascript:void(0)" class="btn" onclick="openPDF('https://github.com/Yuruyj/portfolio_2026/blob/master/Web3_Security_Identity_and_Trust.pdf')">
+                    View Project Report
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg> 
+                    </a> -->
+                </div>
+
+                <!-- <div id="pdf-modal" class="modal-overlay" onclick="closePDF(event)">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closePDF(event)">&times;</span>
+                        <iframe id="pdf-frame" src=""></iframe>
+                    </div>
+                </div>
+
+                <div class="single-img" style="width: 60%; margin-bottom: 16px;">
+                    <img src="img/ux web3_button2.jpg" alt="">
+                </div> -->
+                
+            </section>
+        </div>
+
+        <div class="image-row">
+            <div class="card-single" onclick="openLightbox(this)">
+                <img src="img/medic1.jpg" alt="Chat UI">
+            </div>
+
+            <div class="single-img" onclick="openLightbox(this)">
+                <img src="img/medic2.jpg" alt="Chat UI">
+            </div>
+        </div>
+
+        <div class="single-item">
+            <span class="single-label">▶&ensp;專案目標 / 問題定義</span>
+            <div class="single-content">
+                    <p>照護問題很多時候不是缺少資訊，而是資訊太分散、太難理解。
+                        <br>在整理訪談後，發現家屬真正卡住的地方，不只是「沒有工具」，而是：
+                        <br>•&ensp;照護資訊高度碎片化
+                        <br>•&ensp;家人與醫療端溝通成本高
+                        <br>•&ensp;長期照護造成資訊疲勞
+                        <br>•&ensp;不知道哪些資訊需要優先注意
+                        <br>•&ensp;看得見資訊，但不一定理解目前狀況
+                    </p>
+                </div>
+        </div>
+
+        <div class="image-row">
+            <div class="card-single" onclick="openLightbox(this)">
+                <img src="img/medic3.png" alt="Chat UI">
+            </div>
+
+            <!-- <div class="single-img" onclick="openLightbox(this)">
+                <img src="img/web3_4.png" alt="Chat UI">
+            </div> -->
+        </div>
+
+        <div class="single-item">
+            <span class="single-label">▶&ensp;複雜度與限制</span>
+            <div class="single-content">
+                    <p>•&ensp;多角色協作情境：專案並不是單一使用者產品，而是多角色協作系統，不同角色之間在意的點也都不一樣。
+                    <br>•&ensp;高情緒與高風險情境：照護情境中經常伴隨多種狀況，因此不能只是「把資訊全部攤開」。
+                    <br>•&ensp;醫療產品邊界：在醫療與長照情境中，還是需要刻意避免讓產品介入專業醫療判斷。
+                </p>
+            </div>
+
+        </div>
+
+        <div class="image-row">
+            <div class="card-single" onclick="openLightbox(this)">
+                <img src="img/medic4.png" alt="Chat UI">
+            </div>
+
+            <!-- <div class="single-img" onclick="openLightbox(this)">
+                <img src="img/web3_4.png" alt="Chat UI">
+            </div> -->
+        </div>
+
+        <div class="single-item">
+            <span class="single-label">▶&ensp;規劃思考</span>
+            <div class="single-content">
+                <p><strong>從「數位聯絡簿」重新定義問題</strong>
+                    <br>一開始原本比較偏向「將紙本聯絡簿數位化」，但在第一輪測試後發現，即使資訊透明化，使用者仍認為「只是把紙本變數位。」這讓我重新思考使用者真正需要的，其實不是更多紀錄，
+                    <!-- 而是：<br>•&ensp;更容易理解狀況
+                    <br>•&ensp;更快掌握重點
+                    <br>•&ensp;更清楚知道哪些事情需要注意
+                    <br>•&ensp;更容易與家人與醫療端溝通<br> -->
+                    因此後來將方向調整為：從紀錄工具 → 資訊整合與照護理解輔助。
+                </p>
+
+                <p><strong>從功能導向改為情境導向</strong>
+                    <br>一開始也曾以：用藥、行事曆、照護紀錄、通知等功能進行拆分。但後來發現照護者真正需要的不是很多功能，而是在高壓情境下快速知道：「今天發生什麼事？哪些狀況需要注意？」
+                    因此後來改以「照護情境整合」為主。
+                    <br>在 UI Flow 中，首頁改為 Dashboard，整合：今日狀況、異常事件、醫療行程、照護資源狀態、降低資訊切換與閱讀負擔。
+                </p>
+
+                <p><strong>將問題重新拆成「資訊、溝通、理解」</strong>
+                    <br>沒有直接把痛點轉成功能，而是先重新拆解問題結構：資訊問題、溝通問題、理解問題，因為很多照護問題其實是連動的，而不是單一功能可以解決。
+                </p>
+
+                <p><strong>從完整紀錄改為重點提示</strong>
+                    <br>照護資訊量非常大，如果全部攤開反而容易增加使用壓力，因此在後來規劃上找出優先級，完整紀錄仍然存在，但不放在第一層，避免使用者一打開系統就被大量資訊淹沒。
+                </p>
+
+                <div class="image-row">
+                    <div class="card-single" onclick="openLightbox(this)">
+                        <img src="img/medic5.png" alt="Chat UI">
+                    </div>
+                </div>
+                <div class="image-row">
+                    <div class="card-single" onclick="openLightbox(this)">
+                        <img src="img/medic6.png" alt="Chat UI">
+                    </div>
+                </div>
+                <div class="image-row">
+                    <div class="card-single" onclick="openLightbox(this)">
+                        <img src="img/medic7.png" alt="Chat UI">
+                    </div>
+                </div>
+                <div class="image-row">
+                    <div class="card-single" onclick="openLightbox(this)">
+                        <img src="img/medic8.png" alt="Chat UI">
+                    </div>
+                </div>
+
+                <!-- <div class="image-row">
+                    <div class="card-single" onclick="openLightbox(this)">
+                        <img src="img/medic5.png" alt="Chat UI">
+                    </div>
+
+                    <div class="single-img" onclick="openLightbox(this)">
+                        <img src="img/medic6.png" alt="Chat UI">
+                    </div>
+                </div>
+                <div class="image-row">
+                    <div class="card-single" onclick="openLightbox(this)">
+                        <img src="img/medic7.png" alt="Chat UI">
+                    </div>
+
+                    <div class="single-img" onclick="openLightbox(this)">
+                        <img src="img/medic8.png" alt="Chat UI">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="single-item">
+            <span class="single-label">▶&ensp;設計解法</span>
+            <div class="single-content">
+                <p><strong>Dashboard｜照護狀況整合入口</strong>
+                    <br>首頁以 Dashboard 作為核心入口。整合：今日照護狀況、異常事件、醫療行程、照護資源狀態、快速資訊摘要、讓家屬不需要反覆切換頁面，也能快速掌握目前照護情況。
+                </p>
+                <p><strong>醫療 Timeline｜整理病程脈絡</strong>
+                    <br>將：放療、化療、回診、急診、ICU、住院／出院等事件整合進時間軸中，讓家屬能更容易理解病程與照護事件之間的關聯，也方便回診前快速整理資訊。
+                </p>
+                <p><strong>異常事件高亮</strong>
+                    <br>針對：出血、跌倒、嘔吐、食慾異常等事件進行高亮提示，目的是讓重要資訊更容易被注意，而不是埋在大量紀錄中。
+                </p>
+                <p><strong>診前摘要與詢問整理</strong>
+                    <br>第二輪測試中加入：診前摘要、建議詢問方向、即時衛教資訊、協助家屬在看診前更容易整理狀況與溝通內容，這部分不是提供醫療建議，而是降低家屬面對專業資訊時的混亂與焦慮感。
+                </p>
+                <p><strong>趨勢圖與個人化基準</strong>
+                    <br>測試中，使用者對圖像化趨勢有明顯正向反應，相較於大量數字，趨勢圖能更直覺地看出異常波動，也方便回溯生活事件。另外，不同長輩的正常值差異很大，因此後續也思考導入：個人化健康區間，避免只套用一般標準值。
+                </p>
+            </div>
+        </div>
+
+        <div class="single-item">
+            <span class="single-label">▶&ensp;測試與驗證</span>
+            <div class="single-content">
+                <p><strong>Test 1｜數位聯絡簿方向</strong>
+                    <br>第一輪 Prototype 比較偏向：照護紀錄數位化
+                    <br>雖然改善了資訊透明度，但使用者仍認為只是把紙本變數位，也代表紀錄本身仍然是一種負擔。測試滿意度約停留在 7.2 分。
+                </p>
+                <p><strong>Test 2｜資訊整合與理解輔助方向</strong>
+                    <br>第二輪加入：診前摘要、異常提醒、趨勢資訊、即時衛教資訊後，使用者開始感受到：更容易理解狀況、更有方向感、焦慮下降、與醫療端溝通更順暢，測試滿意度提升至 9.0 分。
+                </p>
+            </div>
+        </div>
+
+        <div class="single-item">
+            <span class="single-label">▶&ensp;專案價值 / 反思</span>
+            <div class="single-content">
+                <p>這個專案讓我重新理解，照護真正的痛點並不在於資訊不足，而在於資訊分散、難以理解，以及跨角色之間缺乏有效溝通。因此，我們的目標不是單純設計一個照護 App，而是重新設計高齡照護中的資訊架構與協作流程，讓照護資訊能夠更容易被理解、持續追蹤，並在家屬、照護者與醫療人員之間順利流動。我認為，這個專案最大的規劃特色有四個：</p>
+                <p><strong>1. 從功能需求回到照護本質問題</strong>
+                    <br>不是直接堆疊功能，而是重新思考照護現場真正混亂的是什麼。
+                </p>
+                <p><strong>2. 多角色與高情緒情境的資訊規劃</strong>
+                    <br>同時處理家屬、居服員、醫療與長照端之間的資訊落差與溝通問題。
+                </p>
+                <p><strong>3. 從功能導向改為情境導向 Flow</strong>
+                    <br>讓 Dashboard 成為照護情境入口，而不是切碎功能頁面。
+                </p>
+                <p><strong>4. 透過 Prototype 驗證方向修正</strong>
+                    <br>從 Test 1 的資訊透明化，逐步調整成更重視資訊理解與溝通輔助的方向。
+                </p>
+            </div>
+        </div>
+
+        <div class="image-row">
+            <div class="card-single" onclick="openLightbox(this)">
+                <img src="img/medic9.png" alt="Chat UI">
+            </div>
+        </div>
+
+        <!-- <div class="image-row">
+            <div class="single-img">
+                <img src="img/ux web3_button1.jpg" alt="">
+            </div>
+
+            <div class="single-img">
+                <img src="img/ux workshop_bottm5.jpg" alt="">
+            </div>
+
+            <div class="single-img">
+                <img src="img/ux web3_button3.jpg" alt="">
+            </div>
+        </div> -->
+
+    </div>
+
+    <!-- 燈箱元素 (預設隱藏) -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Full view" onclick="event.stopPropagation()">
+    </div>
+    
+
+    <script src="project.js"></script>
+</body>
+</html>
