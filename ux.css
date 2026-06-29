@@ -150,6 +150,9 @@ h1 {
 .single-img {
     width: fit-content;
     height: auto;
+    cursor: -webkit-zoom-in; /* 支援 Chrome / Safari */
+    cursor: -moz-zoom-in;    /* 支援 Firefox */
+    cursor: zoom-in;         /* 標準寫法 */
 }
 
 .single-img img {
@@ -238,6 +241,9 @@ h1 {
 .card-single {
     width: fit-content;
     margin: 3rem 0;
+    cursor: -webkit-zoom-in; /* 支援 Chrome / Safari */
+    cursor: -moz-zoom-in;    /* 支援 Firefox */
+    cursor: zoom-in;         /* 標準寫法 */
 }
 
 .card-single img {
@@ -372,6 +378,17 @@ iframe {
     margin: 0; /* 重要：歸零原本的 margin: 3rem 0 */
     flex: 1;   /* 選用：讓兩張圖平分寬度 (如果圖片本身尺寸差異很大可移除此行) */
     min-width: 300px; /* 選用：設定最小寬度，避免在手機上縮得太小 */
+}
+/* 讓 .image-row 裡面的圖片強制變成橫式並自動裁切 */
+.image-row .card-single img,
+.image-row .single-img img {
+    width: 100%;
+    /* 設定你想要的橫式比例，16/9 或 4/3 都很常見 */
+    aspect-ratio: 16 / 9; 
+    /* 核心魔法：保持比例填滿，多餘部分自動裁切隱藏 */
+    object-fit: cover; 
+    /* 設定裁切的對齊點：center 代表取圖片正中間 */
+    object-position: center; 
 }
 
 /* 手機版響應式調整 (可選) */
