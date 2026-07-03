@@ -443,3 +443,10 @@ iframe {
         gap: 24px;
     }
 }
+
+/* --- 防止特定圖片被裁切 --- */
+.image-row .card-single.no-crop img {
+    aspect-ratio: auto;     /* 取消強制 16/9 比例，改為自動依照原圖比例 */
+    object-fit: contain;    /* 確保圖片完整縮放顯示，不進行裁切 */
+    height: auto;           /* 讓高度隨寬度自適應 */
+}
